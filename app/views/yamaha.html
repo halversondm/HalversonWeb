@@ -1,0 +1,22 @@
+<div ng-controller="photoGalleryController" data-perpage="4" data-totalphotos="4"
+     data-fileprefix="images/yamahaPhotos/photo" data-filesuffix=".jpg">
+  <h2>2004 Yamaha VStar 1100 Classic</h2>
+
+  <p>In July 2004, I bought this Yamaha from Reno's Yamaha in Kansas
+    City, Missouri. I upgraded the exhaust to Hard Krome, added a Corbin
+    based Yamaha option seat, and added some chrome goodies from Yamaha.</p>
+  <script type="text/ng-template" id="pictureModal.html">
+    <div class="modal-body">
+      <img ng-src="{{modalPhoto}}" class="img-responsive"/>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-primary previous" type="button" ng-hide="hidePrevious" ng-click="prev()">&laquo;
+        prev
+      </button>
+      <button class="btn btn-primary next" type="button" ng-hide="hideNext" ng-click="next()">
+        next &raquo;</button>
+    </div>
+  </script>
+  <div id="tpl-content" ng-include src="'views/generateGallery.html'"></div>
+</div>
+

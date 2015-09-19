@@ -1,0 +1,27 @@
+<label>Enter Stock to Retrieve&nbsp;
+  <input type="text" name="stock" ng-model="stockInput">
+</label>
+<input type="button" value="Go!" ng-click="submit()">
+
+<p>Stock List:</p>
+
+<div class="row" ng-repeat="i in stocks track by $index" ng-if="$index % 4 == 0">
+  <div class="col-sm-3" ng-repeat="stock in [$index, $index + 1, $index + 2, $index +3]"
+       ng-if="stocks[stock]">
+    <div ng-if="stocks[stock].Status === 'SUCCESS'">
+      <strong>Symbol: {{stocks[stock].Symbol}}</strong><br>
+      Name: {{stocks[stock].Name}}<br>
+      Last Price: {{stocks[stock].LastPrice}}<br>
+      Time: {{stocks[stock].Timestamp}}<br>
+      Market Cap: {{stocks[stock].MarketCap}}<br>
+      Change YTD: {{stocks[stock].ChangeYTD}}<br>
+      High: {{stocks[stock].High}}<br>
+      Low: {{stocks[stock].Low}}<br>
+      Open: {{stocks[stock].Open}}
+    </div>
+    <div ng-if="stocks[stock].Status !== 'SUCCESS'">
+      <strong>Message: {{stocks[stock].Message}}</strong>
+    </div>
+  </div>
+  <br>
+</div>
