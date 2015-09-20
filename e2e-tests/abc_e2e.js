@@ -7,7 +7,7 @@
 describe('ABC application E2E tests', function() {
 
     beforeEach(function () {
-        browser.get('apps/abc_ang.html');
+        browser.get('#/abc');
     });
 
     it('shows the modal with an error for missing Consequence', function() {

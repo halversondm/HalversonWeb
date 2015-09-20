@@ -8,7 +8,7 @@
 describe('Base64 Page Tests', function () {
 
     beforeEach(function () {
-        browser.get('apps/base64.html');
+        browser.get('#/base64');
     });
 
     it('encodes', function() {
@@ -19,7 +19,7 @@ describe('Base64 Page Tests', function () {
     });
 
     it('decodes', function() {
-        element(by.css('[href="#decodeTab"]')).click();
+        element(by.id('decodeTab')).element(by.css('a')).click();
         element(by.id('decodeInput')).sendKeys('anBtYzEyMzQ=');
         element(by.id('decode')).click();
 

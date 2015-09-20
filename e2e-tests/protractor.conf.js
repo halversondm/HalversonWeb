@@ -1,19 +1,19 @@
 exports.config = {
-    allScriptsTimeout: 11000,
+  allScriptsTimeout: 11000,
 
-    specs: [
-        '*.js'
-    ],
+  specs: [
+    '*.js'
+  ],
 
-    capabilities: {
-        'browserName': 'chrome'
-    },
+  capabilities: {
+    'browserName': 'chrome'
+  },
 
-    baseUrl: 'http://localhost/HalversonWeb/',
+  baseUrl: 'http://localhost:9001/',
 
-    framework: 'jasmine',
+  framework: 'jasmine',
 
-    jasmineNodeOpts: {
-        defaultTimeoutInterval: 30000
-    }
+  jasmineNodeOpts: {
+    defaultTimeoutInterval: 30000
+  }
 };

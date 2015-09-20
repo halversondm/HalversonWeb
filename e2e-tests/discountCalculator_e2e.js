@@ -7,7 +7,7 @@
 describe('Discount Calculator Page Tests', function () {
 
     beforeEach(function () {
-        browser.get('apps/discountCalculator.html');
+        browser.get('#/discountCalculator');
     });
 
     it('is missing the discount', function () {

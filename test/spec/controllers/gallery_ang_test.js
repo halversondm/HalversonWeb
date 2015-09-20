@@ -70,7 +70,7 @@ describe('Gallery Suite', function () {
             photo.index = "1";
             photo.photoArray = photoArray;
 
-            $controller('ModalInstanceCtrl', {$scope: $scope, $modalInstance: $modalInstance, photo: photo});
+            $controller('photoModalCtrl', {$scope: $scope, $modalInstance: $modalInstance, photo: photo});
 
             expect($scope.modalPhoto).toEqual(photoArray[1]);
             expect($scope.hidePrevious).toBe(false);
@@ -81,7 +81,7 @@ describe('Gallery Suite', function () {
             photo.index = "0";
             photo.photoArray = photoArray;
 
-            $controller('ModalInstanceCtrl', {$scope: $scope, $modalInstance: $modalInstance, photo: photo});
+            $controller('photoModalCtrl', {$scope: $scope, $modalInstance: $modalInstance, photo: photo});
 
             expect($scope.modalPhoto).toEqual(photoArray[0]);
             expect($scope.hidePrevious).toBe(true);
@@ -92,7 +92,7 @@ describe('Gallery Suite', function () {
             photo.index = "2";
             photo.photoArray = photoArray;
 
-            $controller('ModalInstanceCtrl', {$scope: $scope, $modalInstance: $modalInstance, photo: photo});
+            $controller('photoModalCtrl', {$scope: $scope, $modalInstance: $modalInstance, photo: photo});
 
             expect($scope.modalPhoto).toEqual(photoArray[2]);
             expect($scope.hidePrevious).toBe(false);
@@ -103,7 +103,7 @@ describe('Gallery Suite', function () {
             photo.index = "0";
             photo.photoArray = photoArray;
 
-            $controller('ModalInstanceCtrl', {$scope: $scope, $modalInstance: $modalInstance, photo: photo});
+            $controller('photoModalCtrl', {$scope: $scope, $modalInstance: $modalInstance, photo: photo});
             $scope.next();
 
             expect($scope.modalPhoto).toEqual(photoArray[1]);
@@ -115,7 +115,7 @@ describe('Gallery Suite', function () {
             photo.index = "1";
             photo.photoArray = photoArray;
 
-            $controller('ModalInstanceCtrl', {$scope: $scope, $modalInstance: $modalInstance, photo: photo});
+            $controller('photoModalCtrl', {$scope: $scope, $modalInstance: $modalInstance, photo: photo});
             $scope.prev();
 
             expect($scope.modalPhoto).toEqual(photoArray[0]);

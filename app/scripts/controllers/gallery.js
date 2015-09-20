@@ -55,7 +55,7 @@ angular.module('halversonWebApp')
       $modal.open({
         animation: false,
         templateUrl: 'pictureModal.html',
-        controller: 'ModalInstanceCtrl',
+        controller: 'photoModalCtrl',
         size: 'lg',
         resolve: {
           photo: function () {
@@ -68,7 +68,7 @@ angular.module('halversonWebApp')
       });
     };
   }])
-  .controller('ModalInstanceCtrl', ['$scope', '$modalInstance', 'photo', function ($scope, $modalInstance, photo) {
+  .controller('photoModalCtrl', ['$scope', '$modalInstance', 'photo', function ($scope, $modalInstance, photo) {
 
     function showHideButtons() {
       $scope.modalPhoto = $scope.photoArray[$scope.photo];

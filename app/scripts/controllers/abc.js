@@ -79,7 +79,7 @@ angular.module('halversonWebApp')
       var modalInstance = $modal.open({
         animation: false,
         templateUrl: 'messageModal.html',
-        controller: 'ModalInstanceCtrl',
+        controller: 'abcModalCtrl',
         size: 'lg',
         resolve: {
           messages: function () {
@@ -168,9 +168,7 @@ angular.module('halversonWebApp')
       return $scope.messages.length === 0;
     }
 
+  }]).controller('abcModalCtrl', ['$scope', '$modalInstance', '$sce', 'messages', 'html', function ($scope, $modalInstance, $sce, messages, html) {
+    $scope.messages = messages;
+    $scope.phpHtml = $sce.trustAsHtml(html);
   }]);
-
-angular.module('halversonWebApp').controller('ModalInstanceCtrl', ['$scope', '$modalInstance', '$sce', 'messages', 'html', function ($scope, $modalInstance, $sce, messages, html) {
-  $scope.messages = messages;
-  $scope.phpHtml = $sce.trustAsHtml(html);
-}]);
