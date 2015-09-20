@@ -80,18 +80,8 @@ angular.module('halversonWebApp')
     };
 }])
 .controller('discountCalculatorController', ['$scope', 'calculatorService', function ($scope, calculatorService) {
-    function clear() {
-      $scope.errorShow = false;
-      $scope.successShow = false;
-      $scope.discount1 = "";
-      $scope.discount2 = "";
-      $scope.labelPrice = "";
-      $scope.calculationMessage = [];
-    }
 
-    clear();
-
-    $scope.ang_calculate = function () {
+    $scope.calculate = function () {
         calculatorService.validate($scope.discount1, $scope.discount2,
             $scope.labelPrice);
         if (!calculatorService.isError()) {
@@ -103,9 +93,15 @@ angular.module('halversonWebApp')
         $scope.calculationMessage = calculatorService.getMessage();
     };
 
-    $scope.ang_clear = function () {
-        clear();
+    $scope.clear = function () {
+      $scope.errorShow = false;
+      $scope.successShow = false;
+      $scope.discount1 = "";
+      $scope.discount2 = "";
+      $scope.labelPrice = "";
+      $scope.calculationMessage = [];
     };
 
+    $scope.clear();
 
 }]);

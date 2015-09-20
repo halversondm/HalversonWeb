@@ -6,33 +6,37 @@
 'use strict';
 describe('Base64 Suite', function () {
 
-    beforeEach(module('halversonWebApp'));
+  beforeEach(module('halversonWebApp'));
 
-    var $controller;
+  var decoder;
+  var encoder;
+  var scope;
 
-    beforeEach(inject(function (_$controller_) {
-        $controller = _$controller_;
-    }));
-
-    describe('controller tests', function() {
-
-        it('should decode', function() {
-            var $scope = {};
-            $controller('decoder', {$scope: $scope});
-            $scope.decodeInput = 'anBtYzEyMzQ=';
-            $scope.goDecode();
-
-            expect($scope.decodeOutput).toEqual('jpmc1234');
-        });
-
-        it('should encode', function() {
-            var $scope = {};
-            $controller('encoder', {$scope: $scope});
-            $scope.encodeInput = 'jpmc1234';
-            $scope.goEncode();
-
-            expect($scope.encodeOutput).toEqual('anBtYzEyMzQ=');
-        });
+  beforeEach(inject(function ($controller, $rootScope) {
+    scope = $rootScope.$new();
+    decoder = $controller('decoder', {
+      $scope: scope
     });
+    encoder = $controller('encoder', {
+      $scope: scope
+    });
+  }));
+
+  describe('controller tests', function () {
+
+    it('should decode', function () {
+      scope.decodeInput = 'anBtYzEyMzQ=';
+      scope.goDecode();
+
+      expect(scope.decodeOutput).toEqual('jpmc1234');
+    });
+
+    it('should encode', function () {
+      scope.encodeInput = 'jpmc1234';
+      scope.goEncode();
+
+      expect(scope.encodeOutput).toEqual('anBtYzEyMzQ=');
+    });
+  });
 
 });
