@@ -30,7 +30,7 @@ angular
       .when('/apps', {
         templateUrl: 'views/apps.html'
       })
-      .when('/blogs', {
+      .when('/blog', {
         templateUrl: 'views/blogs.html'
       })
       .when('/auto', {
@@ -38,9 +38,6 @@ angular
       })
       .when('/resume', {
         templateUrl: 'views/resume.html'
-      })
-      .when('/wedding', {
-        templateUrl: 'views/wedding.html'
       })
       .when('/abc', {
         templateUrl: 'views/abc.html',
@@ -80,6 +77,16 @@ angular
       })
       .when('/snapGallery', {
         templateUrl: 'views/snapGallery.html'
+      })
+      .when('/grades', {
+        templateUrl: 'views/grades.html',
+        controller: 'gradesController',
+        controllerAs: 'grades'
+      })
+      .when('/urlBuilder', {
+        templateUrl: 'views/urlBuilder.html',
+        controller: 'urlBuilderController',
+        controllerAs: 'urlBulider'
       })
       .otherwise({
         redirectTo: '/'
