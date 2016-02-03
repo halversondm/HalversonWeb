@@ -1,0 +1,56 @@
+<h2>Grade Book</h2>
+<p>Quizzes are on a 10 point basis. Exams are on a 100 point basis. Quizzes and the Midterm count for 25% of the final
+    grade. The final exam counts for 50% of the final grade.</p>
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        <th>Student #</th>
+        <th>Quiz 1 Grade</th>
+        <th>Quiz 2 Grade</th>
+        <th>Midterm Exam Grade</th>
+        <th>Final Exam Grade</th>
+        <th>Class Average</th>
+        <th>Letter Grade</th>
+        <th>Remove Student</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="student in grades.studentList">
+        <td>{{student.studentNumber}}</td>
+        <td>{{student.quiz1}}</td>
+        <td>{{student.quiz2}}</td>
+        <td>{{student.midterm}}</td>
+        <td>{{student.final}}</td>
+        <td>{{student.classAverage}}</td>
+        <td>{{student.letterGrade}}</td>
+        <td>
+            <button class="btn btn-danger btn-sm" ng-click="grades.removeStudent($index)"> - Remove Student</button>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<hr>
+<h4>Add a new student</h4>
+<form class="form-horizontal">
+    <div class="form-group">
+        <label for="studentNumber" class="col-sm-2 control-label">Student Number</label>
+        <input id="studentNumber" ng-model="grades.student.studentNumber" type="number" class="input-group col-sm-2"/>
+    </div>
+    <div class="form-group">
+        <label for="quiz1" class="col-sm-2 control-label">Quiz 1 Grade</label>
+        <input id="quiz1" ng-model="grades.student.quiz1" type="number" class="input-group col-sm-2"/>
+    </div>
+    <div class="form-group">
+        <label for="quiz2" class="col-sm-2 control-label">Quiz 2 Grade</label>
+        <input id="quiz2" ng-model="grades.student.quiz2" type="number" class="input-group col-sm-2"/>
+    </div>
+    <div class="form-group">
+        <label for="midterm" class="col-sm-2 control-label">Midterm Exam Grade</label>
+        <input id="midterm" ng-model="grades.student.midterm" type="number" class="input-group col-sm-2"/>
+    </div>
+    <div class="form-group">
+        <label for="final" class="col-sm-2 control-label">Final Exam Grade</label>
+        <input id="final" ng-model="grades.student.final" type="number" class="input-group col-sm-2"/>
+    </div>
+    <button class="btn btn-primary btn-sm" id="addStudent" ng-click="grades.addStudent()"> + Add Student</button>
+</form>

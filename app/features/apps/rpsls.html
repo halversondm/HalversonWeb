@@ -1,0 +1,64 @@
+<h2>Rock, Paper, Scissors, Lizard, Spock</h2>
+
+<p>Play the popular game with your computer! In this version,
+    you'll be playing with Lizard and Spock too.</p>
+
+<div class="row">
+    <div class="col-xs-12 col-sm-6 col-md-8 btn-group img-responsive"
+         role="group" id="human">
+        <p>Your Pick</p>
+
+        <button id="rock" ng-click="rpsls.human('rock')" type="button" class="btn btn-default"
+                ng-class="{'btn-success' : rpsls.rock}">
+            <img src="../images/rock.jpg"/>
+        </button>
+        <button id="paper" ng-click="rpsls.human('paper')" type="button" class="btn btn-default"
+                ng-class="{'btn-success' : rpsls.paper}">
+            <img src="../images/paper.jpg"/>
+        </button>
+        <button id="scissors" ng-click="rpsls.human('scissors')" type="button" class="btn btn-default"
+                ng-class="{'btn-success' : rpsls.scissors}">
+            <img src="../images/scissors.jpg"/>
+        </button>
+        <button id="lizard" ng-click="rpsls.human('lizard')" type="button" class="btn btn-default"
+                ng-class="{'btn-success' : rpsls.lizard}">
+            <img src="../images/lizard.jpg"/>
+        </button>
+        <button id="spock" ng-click="rpsls.human('spock')" type="button" class="btn btn-default"
+                ng-class="{'btn-success' : rpsls.spock}">
+            <img src="../images/spock.jpg"/>
+        </button>
+    </div>
+    <div class="col-xs-6 col-md-4">
+        <p>Who wins?</p>
+
+        <div id="alert_placeholder">
+            <div class="alert alert-success" role="alert" ng-show="rpsls.gameSuccess"><b>{{rpsls.winner}}</b><br/>{{rpsls.explanation}}
+            </div>
+            <div class="alert alert-warning" role="alert" ng-show="rpsls.gameDraw"><b>{{rpsls.winner}}</b><br/>{{rpsls.explanation}}
+            </div>
+            <div class="alert alert-danger" role="alert" ng-show="rpsls.gameLose"><b>{{rpsls.winner}}</b><br/>{{rpsls.explanation}}
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-8 btn-group img-responsive"
+         role="group" id="computer">
+        <p>Computer's Pick</p>
+        <button id="Rock2" type="button" class="btn btn-default" ng-class="{'btn-danger' : rpsls.rock2}" disabled>
+            <img src="../images/rock.jpg"/>
+        </button>
+        <button id="Paper2" type="button" class="btn btn-default" ng-class="{'btn-danger' : rpsls.paper2}" disabled>
+            <img src="../images/paper.jpg"/>
+        </button>
+        <button id="Scissors2" type="button" class="btn btn-default" ng-class="{'btn-danger' : rpsls.scissors2}"
+                disabled>
+            <img src="../images/scissors.jpg"/>
+        </button>
+        <button id="Lizard2" type="button" class="btn btn-default" ng-class="{'btn-danger' : rpsls.lizard2}" disabled>
+            <img src="../images/lizard.jpg"/>
+        </button>
+        <button id="Spock2" type="button" class="btn btn-default" ng-class="{'btn-danger' : rpsls.spock2}" disabled>
+            <img src="../images/spock.jpg"/>
+        </button>
+    </div>
+</div>
