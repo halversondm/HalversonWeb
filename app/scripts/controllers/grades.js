@@ -28,7 +28,7 @@ angular.module('halversonWebApp').controller('gradesController', ['$scope', func
     $scope.student = {};
   };
 
-  $scope.removeStudent = function(index) {
+  $scope.removeStudent = function (index) {
     $scope.studentList.splice(index, 1);
   };
 
