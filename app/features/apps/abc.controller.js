@@ -18,59 +18,10 @@ export default class AbcController {
         this.intensities = ['Low', 'Medium', 'High'];
         this.consequences = ['Verbal Redirection', 'Physical assist/prompt', 'Ignored problem behavior', 'Kept on demand', 'Verbal reprimand', 'Removed from activity', 'Given a different activity/task', 'Lost Privilege', 'Sent to room', 'Given a time out', 'Left alone'];
 
-        this.abc = {};
-        this.antecedentOtherDisabled = true;
-        this.peopleOtherDisabled = true;
-        this.behaviorOtherDisabled = true;
-        this.consequenceOtherDisabled = true;
-        this.messages = [];
-        this.phpHTML = "";
-        this.user = {
-            when: "",
-            antecedent: "",
-            antecedentOther: "",
-            location: "",
-            people: [],
-            peopleOther: "",
-            behavior: [],
-            behaviorOther: "",
-            duration: "",
-            intensity: "",
-            consequence: [],
-            consequenceOther: ""
-        };
+        this.reset();
     }
 
-    togglePerson(person) {
-        var idx = this.user.people.indexOf(person);
-        if (idx > -1) {
-            this.user.people.splice(idx, 1);
-        } else {
-            this.user.people.push(person);
-        }
-    }
-
-    toggleBehavior(behavior) {
-        var idx = this.user.behavior.indexOf(behavior);
-        if (idx > -1) {
-            this.user.behavior.splice(idx, 1);
-        } else {
-            this.user.behavior.push(behavior);
-        }
-    }
-
-    toggleConsequence(consequence) {
-        var idx = this.user.consequence.indexOf(consequence);
-        if (idx > -1) {
-            this.user.consequence.splice(idx, 1);
-        } else {
-            this.user.consequence.push(consequence);
-        }
-    }
-
-    save(user) {
-        this.abc = angular.copy(user);
-        console.dir(this.abc);
+    save() {
         if (!this.validSave()) {
             this.open(false);
         } else {
@@ -79,22 +30,28 @@ export default class AbcController {
     }
 
     reset() {
-        this.user = {people: [], behavior: [], consequence: []};
+      this.antecedentOtherDisabled = true;
+      this.messages = [];
+      this.phpHTML = "";
+      this.user = {
+        when: "",
+        antecedent: "",
+        antecedentOther: "",
+        location: "",
+        people: [],
+        peopleOther: "",
+        behavior: [],
+        behaviorOther: "",
+        duration: "",
+        intensity: "",
+        consequence: [],
+        consequenceOther: ""
+      };
     }
 
     getTime() {
         var time = new Date();
         this.user.when = time.toLocaleString();
-    }
-
-    peopleOtherText() {
-        this.togglePerson('Other');
-        if (this.peopleOtherDisabled) {
-            this.peopleOtherDisabled = false;
-        } else {
-            this.peopleOtherDisabled = true;
-            this.user.peopleOther = "";
-        }
     }
 
     antecedentOtherText(name) {
@@ -103,26 +60,6 @@ export default class AbcController {
         } else {
             this.antecedentOtherDisabled = true;
             this.user.antecedentOther = "";
-        }
-    }
-
-    behaviorOtherText() {
-        this.toggleBehavior('Other');
-        if (this.behaviorOtherDisabled) {
-            this.behaviorOtherDisabled = false;
-        } else {
-            this.behaviorOtherDisabled = true;
-            this.user.behaviorOther = "";
-        }
-    }
-
-    consequenceOtherText() {
-        this.toggleConsequence('Other');
-        if (this.consequenceOtherDisabled) {
-            this.consequenceOtherDisabled = false;
-        } else {
-            this.consequenceOtherDisabled = true;
-            this.user.consequenceOther = "";
         }
     }
 
@@ -146,12 +83,12 @@ export default class AbcController {
         });
 
         if (reset) {
-            modalInstance.result.then(r => this.reset, r => this.reset);
+            modalInstance.result.then(() => this.reset(), () => this.reset());
         }
     }
 
     postToPhp() {
-        this.http.post('abc.php', JSON.stringify(this.abc)).then(response => this.phpGood(response), response => this.phpBad(response));
+        this.http.post('abc.php', JSON.stringify(this.user)).then(response => this.phpGood(response), response => this.phpBad(response));
     }
 
     phpGood(response) {
@@ -161,66 +98,65 @@ export default class AbcController {
 
     phpBad(response) {
         this.messages.push(response);
-        this.open(true);
-        console.log(this.messages);
+        this.open(false);
     }
 
     validSave() {
         this.messages = [];
-        if (!this.abc.people || this.abc.people.length === 0) {
+        if (!this.user.people || this.user.people.length === 0) {
             this.messages.push("At least one Person is required to save.");
         } else {
-            if (this.abc.people.indexOf("Other") === 0) {
-                if (!this.abc.peopleOther || this.abc.peopleOther === "") {
+            if (this.user.people.indexOf("Other") === 0) {
+                if (!this.user.peopleOther || this.user.peopleOther === "") {
                     this.messages.push("For People - Other, the text description of Other must be entered.");
                 }
             } else {
-                this.abc.peopleOther = "";
+                this.user.peopleOther = "";
             }
         }
-        if (!this.abc.behavior || this.abc.behavior.length === 0) {
+        if (!this.user.behavior || this.user.behavior.length === 0) {
             this.messages.push("At least one Behavior is required to save.");
         } else {
-            if (this.abc.behavior.indexOf("Other") === 0) {
-                if (!this.abc.behaviorOther || this.abc.behaviorOther === "") {
+            if (this.user.behavior.indexOf("Other") === 0) {
+                if (!this.user.behaviorOther || this.user.behaviorOther === "") {
                     this.messages.push("For Behavior - Other, the text description of Other must be entered.");
                 }
             } else {
-                this.abc.behaviorOther = "";
+                this.user.behaviorOther = "";
             }
         }
-        if (!this.abc.consequence || this.abc.consequence.length === 0) {
+        if (!this.user.consequence || this.user.consequence.length === 0) {
             this.messages.push("At least one Consequence is required to save.");
         } else {
-            if (this.abc.consequence.indexOf("Other") === 0) {
-                if (!this.abc.consequenceOther || this.abc.consequenceOther === "") {
+            if (this.user.consequence.indexOf("Other") === 0) {
+                if (!this.user.consequenceOther || this.user.consequenceOther === "") {
                     this.messages.push("For Consequence - Other, the text description of Other must be entered.");
                 }
             } else {
-                this.abc.consequenceOther = "";
+                this.user.consequenceOther = "";
             }
         }
-        if (!this.abc.antecedent) {
+        if (!this.user.antecedent) {
             this.messages.push("An Antecedent is required to save.");
         } else {
-            if (this.abc.antecedent === "Other") {
-                if (!this.abc.antecedentOther || this.abc.antecedentOther === "") {
+            if (this.user.antecedent === "Other") {
+                if (!this.user.antecedentOther || this.user.antecedentOther === "") {
                     this.messages.push("For Antecedent - Other, the text description of Other must be entered.");
                 }
             } else {
-                this.abc.antecedentOther = "";
+                this.user.antecedentOther = "";
             }
         }
-        if (!this.abc.location) {
+        if (!this.user.location) {
             this.messages.push("A Location is required to save.");
         }
-        if (!this.abc.duration) {
+        if (!this.user.duration) {
             this.messages.push("A Duration is required to save.");
         }
-        if (!this.abc.intensity) {
+        if (!this.user.intensity) {
             this.messages.push("An Intensity is required to save.");
         }
-        if (!this.abc.when) {
+        if (!this.user.when) {
             this.messages.push("The date and time of the ABC is required to save.");
         }
 

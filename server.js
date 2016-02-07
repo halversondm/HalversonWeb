@@ -6,10 +6,15 @@ import webpack from 'webpack';
 import webpackMiddleware from 'webpack-dev-middleware';
 import webpackHotMiddleware from 'webpack-hot-middleware';
 import config from './webpack.config.js';
+import bodyParser from 'body-parser';
+
 
 const isDeveloping = process.env.NODE_ENV !== 'production';
 const port = isDeveloping ? 3000 : 3001;
 const app = express();
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}));
+
 
 if (isDeveloping) {
     console.log("Running the 'hot' version of the code");
@@ -40,6 +45,16 @@ if (isDeveloping) {
         res.sendFile(path.join(__dirname, 'dist/index.html'));
     });
 }
+
+app.post('/abc.php', function response(req, res) {
+  console.log(req.body);
+  res.send('ABC Saved!');
+});
+
+app.post('/mail.php', function response(req, res) {
+  console.log(req.body);
+  res.send('Email Success!');
+});
 
 app.listen(port, '0.0.0.0', function onStart(err) {
     if (err) {
