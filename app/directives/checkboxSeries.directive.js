@@ -12,32 +12,39 @@ class CheckboxSeriesDirective {
     this.template = require('./checkboxSeries.html');
   }
 
-  controller($scope) {
-    $scope.otherLabelDisabled = true;
-    $scope.toggleSelected = function (label) {
-      var idx = $scope.selected.indexOf(label);
+  link(scope) {
+    scope.otherLabelDisabled = true;
+    scope.toggleSelected = function (label) {
+      var idx = scope.selected.indexOf(label);
       if (idx > -1) {
-        $scope.selected.splice(idx, 1);
+        scope.selected.splice(idx, 1);
       } else {
-        $scope.selected.push(label);
+        scope.selected.push(label);
       }
 
     };
 
-    $scope.otherLabelText = function () {
-      $scope.toggleSelected('Other');
-      if ($scope.otherLabelDisabled) {
-        $scope.otherLabelDisabled = false;
+    scope.otherLabelText = function () {
+      scope.toggleSelected('Other');
+      if (scope.otherLabelDisabled) {
+        scope.otherLabelDisabled = false;
       } else {
-        $scope.otherLabelDisabled = true;
-        $scope.labelOtherText = "";
+        scope.otherLabelDisabled = true;
+        scope.labelOtherText = "";
       }
 
     }
+
+  }
+
+  static directiveFactory() {
+    CheckboxSeriesDirective.instance = new CheckboxSeriesDirective();
+    return CheckboxSeriesDirective.instance;
+
   }
 
 }
 
 export default angular.module('directives.checkboxSeries', [])
-  .directive('checkboxSeries', () => new CheckboxSeriesDirective)
+  .directive('checkboxSeries', CheckboxSeriesDirective.directiveFactory)
   .name;
