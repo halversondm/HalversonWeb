@@ -11,7 +11,7 @@ import PhotoGalleryModalController from './photoGalleryModal.controller.js';
 import photoGallery from '../../directives/photoGallery.directive.js';
 
 export default angular.module('app.auto', [ui_router, uibs, photoGallery])
-    .config(routing)
-    .controller('PhotoGalleryController', PhotoGalleryController)
-    .controller('PhotoGalleryModalController', PhotoGalleryModalController)
-    .name;
+  .config(routing)
+  .controller('PhotoGalleryController', PhotoGalleryController)
+  .controller('PhotoGalleryModalController', PhotoGalleryModalController)
+  .name;

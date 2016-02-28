@@ -9,13 +9,13 @@ const MODAL = new WeakMap();
 class PhotoGalleryDirective {
   constructor($uibModal) {
     this.restrict = 'E';
-    this.scope = {photoArray: '='};
+    this.scope = { photoArray: '=' };
     this.template = require('./photoTemplate.html');
     MODAL.set(this, $uibModal);
   }
 
   link(scope) {
-    scope.clickAction = function ($index) {
+    scope.clickAction = function($index) {
       MODAL.get(PhotoGalleryDirective.instance).open({
         animation: false,
         template: require('./photoModal.html'),
@@ -23,7 +23,7 @@ class PhotoGalleryDirective {
         controllerAs: 'modal',
         size: 'lg',
         resolve: {
-          photo: function () {
+          photo: function() {
             return {
               "index": $index,
               "photoArray": scope.photoArray

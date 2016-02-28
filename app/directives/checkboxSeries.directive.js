@@ -8,13 +8,13 @@ import angular from 'angular';
 class CheckboxSeriesDirective {
   constructor() {
     this.restrict = 'E';
-    this.scope = {labels: '=', selected: '=', labelOtherText: '=', otherLabelPlaceholder: '@'};
+    this.scope = { labels: '=', selected: '=', labelOtherText: '=', otherLabelPlaceholder: '@' };
     this.template = require('./checkboxSeries.html');
   }
 
   link(scope) {
     scope.otherLabelDisabled = true;
-    scope.toggleSelected = function (label) {
+    scope.toggleSelected = function(label) {
       var idx = scope.selected.indexOf(label);
       if (idx > -1) {
         scope.selected.splice(idx, 1);
@@ -24,7 +24,7 @@ class CheckboxSeriesDirective {
 
     };
 
-    scope.otherLabelText = function () {
+    scope.otherLabelText = function() {
       scope.toggleSelected('Other');
       if (scope.otherLabelDisabled) {
         scope.otherLabelDisabled = false;

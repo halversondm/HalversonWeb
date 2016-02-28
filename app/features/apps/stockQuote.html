@@ -1,28 +1,25 @@
 <h2 class="text-primary">Stock Quotes</h2>
 <label>Enter Stock to Retrieve&nbsp;
-    <input type="text" name="stock" ng-model="stockQuote.stockInput">
+  <input type="text" name="stock" ng-model="stockQuote.stockInput">
 </label>
 <input type="button" value="Go!" ng-click="stockQuote.submit()">
-
 <p>Stock List:</p>
-
 <div class="row" ng-repeat="i in stockQuote.stocks track by $index" ng-if="$index % 4 == 0">
-    <div class="col-sm-3" ng-repeat="stock in [$index, $index + 1, $index + 2, $index +3]"
-         ng-if="stockQuote.stocks[stock]">
-        <div ng-if="stockQuote.stocks[stock].Status === 'SUCCESS'">
-            <strong>Symbol: {{stockQuote.stocks[stock].Symbol}}</strong><br>
-            Name: {{stockQuote.stocks[stock].Name}}<br>
-            Last Price: {{stockQuote.stocks[stock].LastPrice}}<br>
-            Time: {{stockQuote.stocks[stock].Timestamp}}<br>
-            Market Cap: {{stockQuote.stocks[stock].MarketCap}}<br>
-            Change YTD: {{stockQuote.stocks[stock].ChangeYTD}}<br>
-            High: {{stockQuote.stocks[stock].High}}<br>
-            Low: {{stockQuote.stocks[stock].Low}}<br>
-            Open: {{stockQuote.stocks[stock].Open}}
-        </div>
-        <div ng-if="stockQuote.stocks[stock].Status !== 'SUCCESS'">
-            <strong>Message: {{stockQuote.stocks[stock].Message}}</strong>
-        </div>
+  <div class="col-sm-3" ng-repeat="stock in [$index, $index + 1, $index + 2, $index +3]" ng-if="stockQuote.stocks[stock]">
+    <div ng-if="stockQuote.stocks[stock].Status === 'SUCCESS'">
+      <strong>Symbol: {{stockQuote.stocks[stock].Symbol}}</strong>
+      <br> Name: {{stockQuote.stocks[stock].Name}}
+      <br> Last Price: {{stockQuote.stocks[stock].LastPrice}}
+      <br> Time: {{stockQuote.stocks[stock].Timestamp}}
+      <br> Market Cap: {{stockQuote.stocks[stock].MarketCap}}
+      <br> Change YTD: {{stockQuote.stocks[stock].ChangeYTD}}
+      <br> High: {{stockQuote.stocks[stock].High}}
+      <br> Low: {{stockQuote.stocks[stock].Low}}
+      <br> Open: {{stockQuote.stocks[stock].Open}}
     </div>
-    <br>
+    <div ng-if="stockQuote.stocks[stock].Status !== 'SUCCESS'">
+      <strong>Message: {{stockQuote.stocks[stock].Message}}</strong>
+    </div>
+  </div>
+  <br>
 </div>

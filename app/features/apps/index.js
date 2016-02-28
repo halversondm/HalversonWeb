@@ -21,13 +21,13 @@ import checkboxSeries from '../../directives/checkboxSeries.directive.js';
 
 
 export default angular.module('app.apps', [ui_router, uibs, discountCalculator, rpslsService, stockQuoteService, checkboxSeries])
-    .config(routing)
-    .controller('AbcController', AbcController)
-    .controller('Base64Controller', Base64Controller)
-    .controller('DiscountCalculatorController', DiscountCalculatorController)
-    .controller('RpslsController', RpslsController)
-    .controller('GradesController', GradesController)
-    .controller('StockQuoteController', StockQuoteController)
-    .controller('UrlBuilderController', UrlBuilderController)
-    .controller('AbcModalController', AbcModalController)
-    .name;
+  .config(routing)
+  .controller('AbcController', AbcController)
+  .controller('Base64Controller', Base64Controller)
+  .controller('DiscountCalculatorController', DiscountCalculatorController)
+  .controller('RpslsController', RpslsController)
+  .controller('GradesController', GradesController)
+  .controller('StockQuoteController', StockQuoteController)
+  .controller('UrlBuilderController', UrlBuilderController)
+  .controller('AbcModalController', AbcModalController)
+  .name;

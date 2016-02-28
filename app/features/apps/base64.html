@@ -1,21 +1,17 @@
 <h4 class="text-success">An all Bootstrap and AngularJS implementation of converting your data to and from Base64 encoding. No tracking of
   your data is done. No calls to other services.  It's all in your browser.</h4>
-
 <tabset>
   <tab heading="Encode" id="encodeTab">
-    <form class="form-horizontal" role="form" >
+    <form class="form-horizontal" role="form">
       <h2>Encode Data to Base64</h2>
-
       <div class="form-group">
         <label for="encodeInput" class="col-sm-2 control-label">Un-encoded</label>
-
         <div class="col-sm-10">
           <textarea class="form-control" id="encodeInput" ng-model="base64.encodeInput" required></textarea>
         </div>
       </div>
       <div class="form-group">
         <label for="encodeOutput" class="col-sm-2 control-label">Encoded</label>
-
         <div class="col-sm-10">
           <textarea class="form-control" id="encodeOutput" readonly>{{base64.encodeOutput}}</textarea>
         </div>
@@ -32,17 +28,14 @@
   <tab heading="Decode" id="decodeTab">
     <form class="form-horizontal" role="form">
       <h2>Decode Base 64 to Data</h2>
-
       <div class="form-group">
         <label for="decodeInput" class="col-sm-2 control-label">Encoded</label>
-
         <div class="col-sm-10">
           <textarea class="form-control" id="decodeInput" ng-model="base64.decodeInput" required></textarea>
         </div>
       </div>
       <div class="form-group">
         <label for="decodeOutput" class="col-sm-2 control-label">Un-encoded</label>
-
         <div class="col-sm-10">
           <textarea class="form-control" id="decodeOutput" readonly>{{base64.decodeOutput}}</textarea>
         </div>

@@ -8,37 +8,37 @@ import angular from 'angular';
 
 export default class PhotoGalleryModalController {
 
-    constructor($uibModalInstance, photo) {
-        this.modalInstance = $uibModalInstance;
-        this.photo = photo;
-        this.photoIndex = Number(photo.index);
-        this.photoArray = photo.photoArray;
-        this.showHideButtons();
-    }
+  constructor($uibModalInstance, photo) {
+    this.modalInstance = $uibModalInstance;
+    this.photo = photo;
+    this.photoIndex = Number(photo.index);
+    this.photoArray = photo.photoArray;
+    this.showHideButtons();
+  }
 
-    showHideButtons() {
-        this.modalPhoto = this.photoArray[this.photoIndex];
-        if (this.photoIndex === 0) {
-            this.hidePrevious = true;
-        } else {
-            this.hidePrevious = false;
-        }
-        if (this.photoIndex === (this.photoArray.length - 1)) {
-            this.hideNext = true;
-        } else {
-            this.hideNext = false;
-        }
+  showHideButtons() {
+    this.modalPhoto = this.photoArray[this.photoIndex];
+    if (this.photoIndex === 0) {
+      this.hidePrevious = true;
+    } else {
+      this.hidePrevious = false;
     }
+    if (this.photoIndex === (this.photoArray.length - 1)) {
+      this.hideNext = true;
+    } else {
+      this.hideNext = false;
+    }
+  }
 
-    prev() {
-        this.photoIndex--;
-        this.showHideButtons();
-    }
+  prev() {
+    this.photoIndex--;
+    this.showHideButtons();
+  }
 
-    next() {
-        this.photoIndex++;
-        this.showHideButtons();
-    }
+  next() {
+    this.photoIndex++;
+    this.showHideButtons();
+  }
 
 }
 

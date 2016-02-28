@@ -1,15 +1,11 @@
 <h2 class="text-primary">Dan Tech</h2>
-
 <p>A technology focused blog that I write on <a href="//tech-dan.blogspot.com" target="_blank">Blogger</a>.</p>
 <div class="input-prepend" ng-show="blog.feeds.length > 0">
   <span class="add-on"><i class="icon-search"></i></span>
-  <input class="span12" type="text" placeholder="Search" data-ng-model="filterText"/>
-      <span class="badge badge-warning"
-            ng-show="blog.feeds.length > 0">{{(blog.feeds | filter:filterText).length}} Items</span>
+  <input class="span12" type="text" placeholder="Search" data-ng-model="filterText" />
+  <span class="badge badge-warning" ng-show="blog.feeds.length > 0">{{(blog.feeds | filter:filterText).length}} Items</span>
 </div>
-
 <div style="height: 10px"></div>
-
 <div ng-repeat="feed in blog.feeds | filter:filterText">
   <div class="panel panel-info">
     <div class="panel-heading">

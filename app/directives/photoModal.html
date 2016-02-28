@@ -1,10 +1,13 @@
 <div class="modal-body">
-  <img ng-src="{{modal.modalPhoto}}" class="img-responsive"/>
+  <img ng-src="{{modal.modalPhoto}}" class="img-responsive" />
 </div>
 <div class="modal-footer">
   <ul class="pager">
-    <li class="previous"><input type="button" ng-hide="modal.hidePrevious" ng-click="modal.prev()"
-                                value="&larr; Previous"/></li>
-    <li class="next"><input type="button" ng-hide="modal.hideNext" ng-click="modal.next()" value="Next &rarr;"/></li>
+    <li class="previous">
+      <input type="button" ng-hide="modal.hidePrevious" ng-click="modal.prev()" value="&larr; Previous" />
+    </li>
+    <li class="next">
+      <input type="button" ng-hide="modal.hideNext" ng-click="modal.next()" value="Next &rarr;" />
+    </li>
   </ul>
 </div>

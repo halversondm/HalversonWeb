@@ -5,29 +5,29 @@
 
 export default class Base64Controller {
 
-    constructor() {
-        this.encodeOutput = "";
-        this.encodeInput = "";
-        this.decodeOutput = "";
-        this.decodeInput = "";
-    }
+  constructor() {
+    this.encodeOutput = "";
+    this.encodeInput = "";
+    this.decodeOutput = "";
+    this.decodeInput = "";
+  }
 
-    goEncode() {
-        this.encodeOutput = window.btoa(this.encodeInput);
-    }
+  goEncode() {
+    this.encodeOutput = window.btoa(this.encodeInput);
+  }
 
-    clearEncode() {
-        this.encodeOutput = "";
-        this.encodeInput = "";
-    }
+  clearEncode() {
+    this.encodeOutput = "";
+    this.encodeInput = "";
+  }
 
-    goDecode() {
-        this.decodeOutput = window.atob(this.decodeInput);
-    }
+  goDecode() {
+    this.decodeOutput = window.atob(this.decodeInput);
+  }
 
-    clearDecode() {
-        this.decodeOutput = "";
-        this.decodeInput = "";
-    }
+  clearDecode() {
+    this.decodeOutput = "";
+    this.decodeInput = "";
+  }
 
 }

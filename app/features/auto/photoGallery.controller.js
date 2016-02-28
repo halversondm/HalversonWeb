@@ -8,55 +8,55 @@ import angular from 'angular';
 
 export default class PhotoGalleryController {
 
-    constructor(galleryConfig) {
-        this.galleryConfig = galleryConfig;
-        this.photoArray = [];
-        this.buttons = [];
-        // determine the first photo and the last photo to appear on each page/button.
-        // the equal division of photos results in the number of buttons needed.
-        this.firstPhoto = [];
-        this.lastPhoto = [];
-        this.go = true;
-        this.page = 0;
-        this.init();
-        this.buildArray(1);
-    }
+  constructor(galleryConfig) {
+    this.galleryConfig = galleryConfig;
+    this.photoArray = [];
+    this.buttons = [];
+    // determine the first photo and the last photo to appear on each page/button.
+    // the equal division of photos results in the number of buttons needed.
+    this.firstPhoto = [];
+    this.lastPhoto = [];
+    this.go = true;
+    this.page = 0;
+    this.init();
+    this.buildArray(1);
+  }
 
-    init() {
-        while (this.go) {
-            if (this.page === 0) {
-                this.firstPhoto.push(1);
-                this.lastPhoto.push(this.galleryConfig.perPage);
-            } else {
-                var nextFirst = this.lastPhoto[this.page - 1] + 1;
-                var nextLast = nextFirst + this.galleryConfig.perPage;
-                if (nextLast > this.galleryConfig.totalPhotos) {
-                    nextLast = this.galleryConfig.totalPhotos;
-                }
-                this.firstPhoto.push(nextFirst);
-                this.lastPhoto.push(nextLast);
-            }
-
-            this.buttons.push(this.page + 1);
-            if (this.lastPhoto[this.page] === this.galleryConfig.totalPhotos) {
-                this.go = false;
-            } else {
-                this.page++;
-            }
+  init() {
+    while (this.go) {
+      if (this.page === 0) {
+        this.firstPhoto.push(1);
+        this.lastPhoto.push(this.galleryConfig.perPage);
+      } else {
+        var nextFirst = this.lastPhoto[this.page - 1] + 1;
+        var nextLast = nextFirst + this.galleryConfig.perPage;
+        if (nextLast > this.galleryConfig.totalPhotos) {
+          nextLast = this.galleryConfig.totalPhotos;
         }
-    }
+        this.firstPhoto.push(nextFirst);
+        this.lastPhoto.push(nextLast);
+      }
 
-    buildArray(pageNumber) {
-        this.photoArray = [];
-        for (var i = this.firstPhoto[pageNumber - 1]; i <= this.lastPhoto[pageNumber - 1]; i++) {
-            var source = this.galleryConfig.filePrefix + i + this.galleryConfig.fileSuffix;
-            this.photoArray.push(source);
-        }
+      this.buttons.push(this.page + 1);
+      if (this.lastPhoto[this.page] === this.galleryConfig.totalPhotos) {
+        this.go = false;
+      } else {
+        this.page++;
+      }
     }
+  }
 
-    click(pageNumber) {
-        this.buildArray(pageNumber);
+  buildArray(pageNumber) {
+    this.photoArray = [];
+    for (var i = this.firstPhoto[pageNumber - 1]; i <= this.lastPhoto[pageNumber - 1]; i++) {
+      var source = this.galleryConfig.filePrefix + i + this.galleryConfig.fileSuffix;
+      this.photoArray.push(source);
     }
+  }
+
+  click(pageNumber) {
+    this.buildArray(pageNumber);
+  }
 
 }
 

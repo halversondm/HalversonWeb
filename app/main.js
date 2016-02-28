@@ -13,4 +13,4 @@ import './abc.php';
 import './mail.php';
 
 angular.module('main', [ui_router, home, auto, apps])
-    .config(routing);
+  .config(routing);

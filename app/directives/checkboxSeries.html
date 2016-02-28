@@ -1,17 +1,11 @@
 <div class="checkbox" ng-repeat="label in labels">
-  <label><input id="{{label}}" name="selectedLabel[]" type="checkbox" value="{{label}}"
-                ng-checked="selected.indexOf(label) > -1"
-                ng-click="toggleSelected(label)">
-    {{label}}
+  <label>
+    <input id="{{label}}" name="selectedLabel[]" type="checkbox" value="{{label}}" ng-checked="selected.indexOf(label) > -1" ng-click="toggleSelected(label)"> {{label}}
   </label>
 </div>
 <div class="checkbox">
-  <label> <input id="otherLabel" type="checkbox" name="selectedLabel[]"
-                 ng-checked="selected.indexOf('Other') > -1"
-                 value="Other"
-                 ng-click="otherLabelText()"> Other
+  <label>
+    <input id="otherLabel" type="checkbox" name="selectedLabel[]" ng-checked="selected.indexOf('Other') > -1" value="Other" ng-click="otherLabelText()"> Other
   </label>
 </div>
-<input type="text" class="form-control" id="labelOther" ng-model="labelOtherText"
-       placeholder="{{otherLabelPlaceholder}}"
-       ng-disabled="otherLabelDisabled">
+<input type="text" class="form-control" id="labelOther" ng-model="labelOtherText" placeholder="{{otherLabelPlaceholder}}" ng-disabled="otherLabelDisabled">

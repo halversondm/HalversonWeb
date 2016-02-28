@@ -1,77 +1,68 @@
 <h2 class="text-primary">ABC Checklist</h2>
-
 <div id="abcChecklist">
   <div class="row">
     <div class="col-md-1">
       <h4>When?</h4>
       <hr>
       <input class="btn btn-primary" ng-click="abc.getTime()" type="button" value="Now" id="now">
-
       <div id="dateTime">{{abc.user.when}}</div>
     </div>
     <div class="col-md-4">
       <h4>Antecedent</h4>
       <hr>
-      <b>What happened before the behavior?</b> <br>
-
+      <b>What happened before the behavior?</b>
+      <br>
       <div class="radio" ng-repeat="antecedent in abc.antecedents">
-        <label> <input type="radio" ng-model="abc.user.antecedent" ng-click="abc.antecedentOtherText('')"
-                       value="{{antecedent}}">{{antecedent}}
+        <label>
+          <input type="radio" ng-model="abc.user.antecedent" ng-click="abc.antecedentOtherText('')" value="{{antecedent}}">{{antecedent}}
         </label>
       </div>
       <div class="radio">
-        <label> <input type="radio" ng-model="abc.user.antecedent" value="Other"
-                       ng-click="abc.antecedentOtherText('Other')"> Other
+        <label>
+          <input type="radio" ng-model="abc.user.antecedent" value="Other" ng-click="abc.antecedentOtherText('Other')"> Other
         </label>
       </div>
-      <input type="text" class="form-control" id="antecedentOther" ng-model="abc.user.antecedentOther"
-             placeholder="Enter Description" ng-disabled="abc.antecedentOtherDisabled">
-      <br> <b>Location</b> <br>
-
+      <input type="text" class="form-control" id="antecedentOther" ng-model="abc.user.antecedentOther" placeholder="Enter Description" ng-disabled="abc.antecedentOtherDisabled">
+      <br> <b>Location</b>
+      <br>
       <div class="radio-inline" ng-repeat="location in abc.locations">
-        <label> <input type="radio" ng-model="abc.user.location" value="{{location}}">{{location}}
+        <label>
+          <input type="radio" ng-model="abc.user.location" value="{{location}}">{{location}}
         </label>
       </div>
-      <br> <b>People Present</b> <br>
-
-      <checkbox-series labels="abc.people" selected="abc.user.people"
-                       other-label-placeholder="Enter Another Person Present"
-                       label-other-text="abc.user.peopleOther"></checkbox-series>
-
+      <br> <b>People Present</b>
+      <br>
+      <checkbox-series labels="abc.people" selected="abc.user.people" other-label-placeholder="Enter Another Person Present" label-other-text="abc.user.peopleOther"></checkbox-series>
     </div>
     <div class="col-md-3">
       <h4>Behavior</h4>
       <hr>
       <b>Select all that apply</b>
-
-      <checkbox-series labels="abc.behaviors" selected="abc.user.behavior" other-label-placeholder="Enter Description"
-                       label-other-text="abc.user.behaviorOther"></checkbox-series>
-
-      <br> <b>Duration</b> <br>
-
+      <checkbox-series labels="abc.behaviors" selected="abc.user.behavior" other-label-placeholder="Enter Description" label-other-text="abc.user.behaviorOther"></checkbox-series>
+      <br> <b>Duration</b>
+      <br>
       <div class="radio-inline" ng-repeat="duration in abc.durations">
-        <label> <input type="radio" ng-model="abc.user.duration" value="{{duration}}">{{duration}}
+        <label>
+          <input type="radio" ng-model="abc.user.duration" value="{{duration}}">{{duration}}
         </label>
       </div>
-      <br> <b>Intensity</b><br>
-
+      <br> <b>Intensity</b>
+      <br>
       <div class="radio-inline" ng-repeat="intensity in abc.intensities">
-        <label> <input type="radio" ng-model="abc.user.intensity" value="{{intensity}}">{{intensity}}
+        <label>
+          <input type="radio" ng-model="abc.user.intensity" value="{{intensity}}">{{intensity}}
         </label>
       </div>
     </div>
     <div class="col-md-4">
       <h4>Consequence</h4>
       <hr>
-      <b>What happened after?</b><br>
-
-      <checkbox-series labels="abc.consequences" selected="abc.user.consequence"
-                       other-label-placeholder="Enter Description"
-                       label-other-text="abc.user.consequenceOther"></checkbox-series>
+      <b>What happened after?</b>
+      <br>
+      <checkbox-series labels="abc.consequences" selected="abc.user.consequence" other-label-placeholder="Enter Description" label-other-text="abc.user.consequenceOther"></checkbox-series>
     </div>
   </div>
   <br>
-
   <div class="row">
     <div class="col-sm-12">
       <input class="btn btn-success" type="submit" ng-click="abc.save()" value="Save" id="save">
