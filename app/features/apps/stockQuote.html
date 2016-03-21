@@ -1,25 +1,39 @@
 <h2 class="text-primary">Stock Quotes</h2>
-<label>Enter Stock to Retrieve&nbsp;
-  <input type="text" name="stock" ng-model="stockQuote.stockInput">
-</label>
-<input type="button" value="Go!" ng-click="stockQuote.submit()">
-<p>Stock List:</p>
-<div class="row" ng-repeat="i in stockQuote.stocks track by $index" ng-if="$index % 4 == 0">
-  <div class="col-sm-3" ng-repeat="stock in [$index, $index + 1, $index + 2, $index +3]" ng-if="stockQuote.stocks[stock]">
-    <div ng-if="stockQuote.stocks[stock].Status === 'SUCCESS'">
-      <strong>Symbol: {{stockQuote.stocks[stock].Symbol}}</strong>
-      <br> Name: {{stockQuote.stocks[stock].Name}}
-      <br> Last Price: {{stockQuote.stocks[stock].LastPrice}}
-      <br> Time: {{stockQuote.stocks[stock].Timestamp}}
-      <br> Market Cap: {{stockQuote.stocks[stock].MarketCap}}
-      <br> Change YTD: {{stockQuote.stocks[stock].ChangeYTD}}
-      <br> High: {{stockQuote.stocks[stock].High}}
-      <br> Low: {{stockQuote.stocks[stock].Low}}
-      <br> Open: {{stockQuote.stocks[stock].Open}}
-    </div>
-    <div ng-if="stockQuote.stocks[stock].Status !== 'SUCCESS'">
-      <strong>Message: {{stockQuote.stocks[stock].Message}}</strong>
-    </div>
+<form class="form-inline">
+  <div class="form-group">
+    <label class="sr-only" for="symbol">Stock Symbol</label>
+    <input type="text" name="stock" id="symbol" class="form-control input-sm" placeholder="Symbol"
+           ng-model="stockQuote.stockInput">
+    <input type="button" class="btn-sm btn-default" value="Go!" ng-click="stockQuote.submit()">
   </div>
-  <br>
-</div>
+</form>
+<h4 class="text-primary">Stock List</h4>
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th>Symbol</th>
+    <th>Name</th>
+    <th>Last Price</th>
+    <th>Time</th>
+    <th>Market Cap</th>
+    <th>Change YTD</th>
+    <th>High</th>
+    <th>Low</th>
+    <th>Open</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr ng-repeat="stock in stockQuote.stocks track by $index">
+    <td>{{stock.Symbol}}</td>
+    <td>{{stock.Name}}</td>
+    <td>{{stock.LastPrice}}</td>
+    <td>{{stock.Timestamp}}</td>
+    <td>{{stock.MarketCap}}</td>
+    <td>{{stock.ChangeYTD}}</td>
+    <td>{{stock.High}}</td>
+    <td>{{stock.Low}}</td>
+    <td>{{stock.Open}}</td>
+  </tr>
+  </tbody>
+</table>
+
