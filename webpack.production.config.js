@@ -21,6 +21,8 @@ module.exports = {
       to: 'images/'
     }, {
       from: 'app/extras'
+    }, {
+      from: 'app/runtime'
     }]),
     new webpack.optimize.OccurenceOrderPlugin(),
     new HtmlWebpackPlugin({

@@ -1,3 +1,6 @@
+/*
+Main production server configuration using NodeJS and ExpressJS
+ */
 'use strict';
 var path = require('path');
 var express = require('express');
@@ -9,9 +12,9 @@ var app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(morgan('common'));
-app.use(express.static(__dirname + '/dist'));
+app.use(express.static(__dirname));
 app.get('*', function response(req, res) {
-    res.sendFile(path.join(__dirname, 'dist/index.html'));
+    res.sendFile(path.join(__dirname, 'index.html'));
 });
 
 app.post('/abc.php', function response(req, res) {
