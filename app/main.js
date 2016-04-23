@@ -1,6 +1,6 @@
 'use strict';
 import angular from 'angular';
-import 'bootstrap/dist/css/bootstrap.css';
+import './bootswatch/dist/bootswatch.css';
 import 'bootstrap/dist/js/bootstrap.js';
 import routing from './main.config';
 import ui_router from 'angular-ui-router';

@@ -1,4 +1,5 @@
 'use strict';
+var morgan = require('morgan');
 var path = require( 'path');
 var express = require( 'express');
 var webpack = require( 'webpack');
@@ -11,6 +12,7 @@ var port = 80;
 var app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
+app.use(morgan('dev'));
 
 
 if (isDeveloping) {
