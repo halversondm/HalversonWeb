@@ -56,9 +56,5 @@ app.post('/mail.php', function response(req, res) {
   res.send('Email Success!');
 });
 
-app.listen(port, function onStart(err) {
-    if (err) {
-        console.log(err);
-    }
-    console.info('==> Listening on port %s.', port);
-});
+app.listen(port);
+console.info('==> Listening on port %s.', port);
