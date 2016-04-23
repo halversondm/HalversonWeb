@@ -18,7 +18,7 @@
   "scripts": {
     "test": "",
     "startProd": "cross-env NODE_ENV=production node server",
-    "startHot": "cross-env NODE_ENV=hot node server",
+    "startHot": "cross-env NODE_ENV=hot node devServer",
     "clean": "rimraf dist",
     "prebuild": "npm run clean && cross-env NODE_ENV=production",
     "build": "webpack --config ./webpack.production.config.js --progress --profile --colors"
