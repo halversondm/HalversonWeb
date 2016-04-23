@@ -9,9 +9,9 @@ var config = require( './webpack.config.js');
 var bodyParser = require( 'body-parser');
 
 
-const isDeveloping = process.env.NODE_ENV !== 'production';
-const port = 80;
-const app = express();
+var isDeveloping = process.env.NODE_ENV !== 'production';
+var port = 80;
+var app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
