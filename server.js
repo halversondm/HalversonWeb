@@ -10,7 +10,7 @@ var bodyParser = require( 'body-parser');
 
 
 const isDeveloping = process.env.NODE_ENV !== 'production';
-const port = isDeveloping ? 3000 : 3001;
+const port = 80;
 const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
