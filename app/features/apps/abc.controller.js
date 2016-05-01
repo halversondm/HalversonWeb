@@ -3,8 +3,6 @@
  */
 'use strict';
 
-import angular from 'angular';
-
 export default class AbcController {
 
   constructor($http, $uibModal) {
@@ -88,7 +86,7 @@ export default class AbcController {
   }
 
   postToPhp() {
-    this.http.post('abc.php', JSON.stringify(this.user)).then(response => this.phpGood(response), response => this.phpBad(response));
+    this.http.post('/saveABC', JSON.stringify(this.user)).then(response => this.phpGood(response), response => this.phpBad(response));
   }
 
   phpGood(response) {
