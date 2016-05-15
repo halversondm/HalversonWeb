@@ -3,12 +3,12 @@
  */
 'use strict';
 
-import angular from 'angular';
+import angular from "angular";
 
 class CheckboxSeriesDirective {
   constructor() {
     this.restrict = 'E';
-    this.scope = { labels: '=', selected: '=', labelOtherText: '=', otherLabelPlaceholder: '@' };
+    this.scope = {labels: '=', selected: '=', labelOtherText: '=', otherLabelPlaceholder: '@'};
     this.template = require('./checkboxSeries.html');
   }
 
@@ -33,7 +33,7 @@ class CheckboxSeriesDirective {
         scope.labelOtherText = "";
       }
 
-    }
+    };
 
   }
 

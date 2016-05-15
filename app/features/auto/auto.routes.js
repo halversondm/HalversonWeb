@@ -19,7 +19,7 @@ export default function routes($stateProvider) {
           totalPhotos: 38,
           filePrefix: 'images/grandPrixPhotos/photo',
           fileSuffix: '.jpg'
-        }
+        };
       }
     },
     controller: 'PhotoGalleryController',
@@ -39,7 +39,7 @@ export default function routes($stateProvider) {
           totalPhotos: 6,
           filePrefix: 'images/hondaPhotos/photo',
           fileSuffix: '.jpg'
-        }
+        };
       }
     },
     controller: 'PhotoGalleryController',
@@ -55,7 +55,7 @@ export default function routes($stateProvider) {
           totalPhotos: 4,
           filePrefix: 'images/yamahaPhotos/photo',
           fileSuffix: '.jpg'
-        }
+        };
       }
     },
     controller: 'PhotoGalleryController',

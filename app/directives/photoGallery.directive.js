@@ -2,14 +2,14 @@
  * Created by Daniel on 1/31/2016.
  */
 'use strict';
-import angular from 'angular';
+import angular from "angular";
 
 const MODAL = new WeakMap();
 
 class PhotoGalleryDirective {
   constructor($uibModal) {
     this.restrict = 'E';
-    this.scope = { photoArray: '=' };
+    this.scope = {photoArray: '='};
     this.template = require('./photoTemplate.html');
     MODAL.set(this, $uibModal);
   }
@@ -31,7 +31,7 @@ class PhotoGalleryDirective {
           }
         }
       });
-    }
+    };
   }
 
   static directiveFactory($uibModal) {

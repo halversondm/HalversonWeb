@@ -12,18 +12,18 @@ var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/abc');
 
 var abcSchema = mongoose.Schema({
-    when: String,
-    antecedent: String,
-    antecedentOther: String,
-    location: String,
-    people: [String],
-    peopleOther: String,
-    behavior: [String],
-    behaviorOther: String,
-    duration: String,
-    intensity: String,
-    consequence: [String],
-    consequenceOther: String
+  when: String,
+  antecedent: String,
+  antecedentOther: String,
+  location: String,
+  people: [String],
+  peopleOther: String,
+  behavior: [String],
+  behaviorOther: String,
+  duration: String,
+  intensity: String,
+  consequence: [String],
+  consequenceOther: String
 });
 
 app.use(bodyParser.json());
@@ -31,27 +31,27 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(morgan('common'));
 app.use(express.static(__dirname));
 app.get('*', function response(req, res) {
-    res.sendFile(path.join(__dirname, 'index.html'));
+  res.sendFile(path.join(__dirname, 'index.html'));
 });
 
 app.post('/saveABC', function response(req, res) {
-    console.log(req.body);
+  console.log(req.body);
 
-    var ABC = mongoose.model('ABC', abcSchema);
-    var abcInstance = new ABC(req.body);
-    abcInstance.save(function (err) {
-        if (err) {
-            console.log(err);
-            res.send(err);
-        } else {
-            res.send('ABC Saved!');
-        }
-    });
+  var ABC = mongoose.model('ABC', abcSchema);
+  var abcInstance = new ABC(req.body);
+  abcInstance.save(function (err) {
+    if (err) {
+      console.log(err);
+      res.send(err);
+    } else {
+      res.send('ABC Saved!');
+    }
+  });
 });
 
 app.post('/mail.php', function response(req, res) {
-    console.log(req.body);
-    res.send('Email Success!');
+  console.log(req.body);
+  res.send('Email Success!');
 });
 
 app.listen(port);

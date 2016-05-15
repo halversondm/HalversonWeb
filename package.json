@@ -20,6 +20,7 @@
     "startProd": "cross-env NODE_ENV=production node server",
     "startHot": "cross-env NODE_ENV=hot node devServer",
     "clean": "rimraf dist",
+    "eslint": "eslint app/**/**.js --fix",
     "prebuild": "npm run clean && cross-env NODE_ENV=production",
     "build": "webpack --config ./webpack.production.config.js --progress --profile --colors"
   },
@@ -41,6 +42,8 @@
     "copy-webpack-plugin": "^1.1.1",
     "cross-env": "^1.0.7",
     "css-loader": "^0.19.0",
+    "eslint": "^2.10.1",
+    "eslint-config-google": "^0.5.0",
     "express": "^4.13.3",
     "extract-text-webpack-plugin": "^0.8.2",
     "file-loader": "^0.8.5",
