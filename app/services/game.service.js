@@ -1,11 +1,8 @@
 /**
  * Created by Daniel on 1/26/2016.
  */
-'use strict';
-
-import angular from 'angular';
-
-
+"use strict";
+import angular from "angular";
 class GameService {
 
   constructor() {
@@ -27,7 +24,6 @@ class GameService {
     this.PLAYER_1 = "Player 1";
     this.PLAYER_2 = "Player 2";
   }
-
 
   setPlayer1(val) {
     this.player1 = val;
@@ -63,6 +59,8 @@ class GameService {
         this.result = this.PAPER_COVERS_ROCK;
         this.winner = this.PLAYER_1;
         break;
+      default:
+        throw new Error("error with choice");
     }
   }
 
@@ -84,6 +82,8 @@ class GameService {
         this.result = this.PAPER_COVERS_ROCK;
         this.winner = this.PLAYER_2;
         break;
+      default:
+        throw new Error("error with choice");
     }
   }
 
@@ -105,6 +105,8 @@ class GameService {
         this.result = this.PAPER_DISPROVES_SPOCK;
         this.winner = this.PLAYER_2;
         break;
+      default:
+        throw new Error("error with choice");
     }
   }
 
@@ -126,6 +128,8 @@ class GameService {
         this.result = this.LIZARD_EATS_PAPER;
         this.winner = this.PLAYER_1;
         break;
+      default:
+        throw new Error("error with choice");
     }
   }
 
@@ -147,6 +151,8 @@ class GameService {
         this.result = this.SCISSORS_CUT_PAPER;
         this.winner = this.PLAYER_1;
         break;
+      default:
+        throw new Error("error with choice");
     }
   }
 
@@ -169,6 +175,8 @@ class GameService {
       case "scissors":
         this.scissors();
         break;
+      default:
+        throw new Error("error with choice");
     }
   }
 
@@ -183,7 +191,6 @@ class GameService {
     this.pick = picks[randomNumber];
   }
 }
-
-export default angular.module('services.game', [])
-  .service('gameService', GameService)
+export default angular.module("services.game", [])
+  .service("gameService", GameService)
   .name;

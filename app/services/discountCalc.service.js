@@ -1,10 +1,8 @@
 /**
  * Created by Daniel on 1/26/2016.
  */
-'use strict';
-
-import angular from 'angular';
-
+"use strict";
+import angular from "angular";
 class DiscountCalculator {
 
   constructor() {
@@ -15,7 +13,6 @@ class DiscountCalculator {
     this.finalPrice = 0.00;
     this.message = [];
   }
-
 
   setFirstDiscount(val) {
     this.discount1 = val;
@@ -50,7 +47,7 @@ class DiscountCalculator {
       newPrice = firstCalc - (firstCalc * (this.discount2 / 100));
     }
     this.finalPrice = newPrice.toFixed(2);
-    this.message.push('Your final price is $' + this.finalPrice + ' plus tax');
+    this.message.push("Your final price is $" + this.finalPrice + " plus tax");
   }
 
   validate(firstDiscount, secondDiscount, labelPriceVal) {
@@ -76,7 +73,6 @@ class DiscountCalculator {
     }
   }
 }
-
-export default angular.module('services.discount-calc', [])
-  .service('discountCalculator', DiscountCalculator)
+export default angular.module("services.discount-calc", [])
+  .service("discountCalculator", DiscountCalculator)
   .name;

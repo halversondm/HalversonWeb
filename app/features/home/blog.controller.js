@@ -1,9 +1,7 @@
 /**
  * Created by Daniel on 2/6/2016.
  */
-'use strict';
-
-import angular from 'angular';
+"use strict";
 
 export default class BlogController {
 
@@ -14,8 +12,8 @@ export default class BlogController {
   }
 
   call() {
-    var myBlog = 'http://tech-dan.blogspot.com/feeds/posts/default';
-    var service = '//ajax.googleapis.com/ajax/services/feed/load?v=1.0&num=50&callback=JSON_CALLBACK&q=';
+    var myBlog = "http://tech-dan.blogspot.com/feeds/posts/default";
+    var service = "//ajax.googleapis.com/ajax/services/feed/load?v=1.0&num=50&callback=JSON_CALLBACK&q=";
     var url = service + encodeURIComponent(myBlog);
     this.http.jsonp(url).then(response => {
       this.feeds = response.data.responseData.feed.entries;
@@ -27,5 +25,4 @@ export default class BlogController {
   }
 
 }
-
-BlogController.$inject = ['$http', '$sce'];
+BlogController.$inject = ["$http", "$sce"];

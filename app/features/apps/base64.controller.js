@@ -1,7 +1,7 @@
 /**
  * Created by Daniel on 1/25/2016.
  */
-'use strict';
+"use strict";
 
 export default class Base64Controller {
 

@@ -1,7 +1,7 @@
 /**
  * Created by Daniel on 1/26/2016.
  */
-'use strict';
+"use strict";
 
 export default class StockQuoteController {
 
@@ -29,5 +29,4 @@ export default class StockQuoteController {
     this.stockInput = "";
   }
 }
-
-StockQuoteController.$inject = ['stockQuoteService'];
+StockQuoteController.$inject = ["stockQuoteService"];

@@ -1,7 +1,7 @@
 /**
  * Created by Daniel on 1/26/2016.
  */
-'use strict';
+"use strict";
 
 export default class RpslsController {
 
@@ -66,6 +66,8 @@ export default class RpslsController {
       case "paper":
         this.paper = true;
         break;
+      default:
+        throw new Error("error with choice");
     }
   }
 
@@ -86,8 +88,9 @@ export default class RpslsController {
       case "paper2":
         this.paper2 = true;
         break;
+      default:
+        throw new Error("error with choice");
     }
   }
 }
-
-RpslsController.$inject = ['gameService'];
+RpslsController.$inject = ["gameService"];

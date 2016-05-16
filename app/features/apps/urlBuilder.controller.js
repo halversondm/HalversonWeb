@@ -1,10 +1,8 @@
 /**
  * Created by Daniel on 1/27/2016.
  */
-'use strict';
-
-import angular from 'angular';
-
+"use strict";
+import angular from "angular";
 export default class UrlBuilderController {
 
   constructor() {
@@ -18,7 +16,6 @@ export default class UrlBuilderController {
     var query = angular.copy(this.query);
     this.queries.push(query);
     this.query = {};
-
   }
 
   assemble() {
@@ -40,7 +37,7 @@ export default class UrlBuilderController {
 
   launch() {
     var myWindow = window.open("", "MsgWindow", "toolbar=yes, scrollbars=yes, resizable=yes, width=1024, height=768");
-    myWindow.document.write('<html><head><meta http-equiv="X-UA-Compatible" content="IE=edge"></head></head><body><iframe src="' + this.assembledUrl + '" width="100%" height="100%" /></body></html>"');
+    myWindow.document.write("<html><head><meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\"></head></head><body><iframe src=\"" + this.assembledUrl + "\" width=\"100%\" height=\"100%\" /></body></html>\"");
   }
 
   setCookie(cname, value) {

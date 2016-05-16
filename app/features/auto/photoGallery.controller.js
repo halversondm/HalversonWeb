@@ -2,9 +2,7 @@
  * created by Dan on 1/30/2016
  */
 
-'use strict';
-
-import angular from 'angular';
+"use strict";
 
 export default class PhotoGalleryController {
 
@@ -59,5 +57,4 @@ export default class PhotoGalleryController {
   }
 
 }
-
-PhotoGalleryController.$inject = ['galleryConfig'];
+PhotoGalleryController.$inject = ["galleryConfig"];

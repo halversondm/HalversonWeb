@@ -1,9 +1,9 @@
 /**
  * Created by Daniel on 1/24/2016.
  */
-'use strict';
+"use strict";
 import angular from "angular";
-import ui_router from "angular-ui-router";
+import uiRouter from "angular-ui-router";
 import routing from "./apps.routes";
 import AbcController from "./abc.controller";
 import AbcModalController from "./abcModal.controller";
@@ -18,16 +18,14 @@ import StockQuoteController from "./stockQuote.controller.js";
 import stockQuoteService from "../../services/stockQuote.service.js";
 import UrlBuilderController from "./urlBuilder.controller.js";
 import checkboxSeries from "../../directives/checkboxSeries.directive.js";
-
-
-export default angular.module('app.apps', [ui_router, uibs, discountCalculator, rpslsService, stockQuoteService, checkboxSeries])
+export default angular.module("app.apps", [uiRouter, uibs, discountCalculator, rpslsService, stockQuoteService, checkboxSeries])
   .config(routing)
-  .controller('AbcController', AbcController)
-  .controller('Base64Controller', Base64Controller)
-  .controller('DiscountCalculatorController', DiscountCalculatorController)
-  .controller('RpslsController', RpslsController)
-  .controller('GradesController', GradesController)
-  .controller('StockQuoteController', StockQuoteController)
-  .controller('UrlBuilderController', UrlBuilderController)
-  .controller('AbcModalController', AbcModalController)
+  .controller("AbcController", AbcController)
+  .controller("Base64Controller", Base64Controller)
+  .controller("DiscountCalculatorController", DiscountCalculatorController)
+  .controller("RpslsController", RpslsController)
+  .controller("GradesController", GradesController)
+  .controller("StockQuoteController", StockQuoteController)
+  .controller("UrlBuilderController", UrlBuilderController)
+  .controller("AbcModalController", AbcModalController)
   .name;

@@ -2,9 +2,7 @@
  * created by Dan on 1/30/2016
  */
 
-'use strict';
-
-import angular from 'angular';
+"use strict";
 
 export default class PhotoGalleryModalController {
 
@@ -41,5 +39,4 @@ export default class PhotoGalleryModalController {
   }
 
 }
-
-PhotoGalleryModalController.$inject = ['$uibModalInstance', 'photo'];
+PhotoGalleryModalController.$inject = ["$uibModalInstance", "photo"];

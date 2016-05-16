@@ -1,7 +1,7 @@
 /**
  * Created by Daniel on 1/26/2016.
  */
-'use strict';
+"use strict";
 
 export default class DiscountCalculatorController {
 
@@ -18,11 +18,11 @@ export default class DiscountCalculatorController {
   calculate() {
     this.discountCalculator.validate(this.discount1, this.discount2,
       this.labelPrice);
-    if (!this.discountCalculator.isError()) {
+    if (this.discountCalculator.isError()) {
+      this.errorShow = true;
+    } else {
       this.discountCalculator.calculate();
       this.successShow = true;
-    } else {
-      this.errorShow = true;
     }
     this.calculationMessage = this.discountCalculator.getMessage();
   }
@@ -37,5 +37,4 @@ export default class DiscountCalculatorController {
   }
 
 }
-
-DiscountCalculatorController.$inject = ['discountCalculator'];
+DiscountCalculatorController.$inject = ["discountCalculator"];

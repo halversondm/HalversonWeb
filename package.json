@@ -21,7 +21,7 @@
     "startHot": "cross-env NODE_ENV=hot node devServer",
     "clean": "rimraf dist",
     "eslint": "eslint app/**/**.js --fix",
-    "prebuild": "npm run clean && cross-env NODE_ENV=production",
+    "prebuild": "npm run clean && cross-env NODE_ENV=production && npm run eslint",
     "build": "webpack --config ./webpack.production.config.js --progress --profile --colors"
   },
   "dependencies": {

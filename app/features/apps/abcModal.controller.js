@@ -1,9 +1,7 @@
 /**
  * Created by Daniel on 1/27/2016.
  */
-'use strict';
-
-import angular from 'angular';
+"use strict";
 
 export default class AbcModalController {
 
@@ -14,5 +12,4 @@ export default class AbcModalController {
     this.phpHtml = $sce.trustAsHtml(html);
   }
 }
-
-AbcModalController.$inject = ['$uibModalInstance', '$sce', 'messages', 'html'];
+AbcModalController.$inject = ["$uibModalInstance", "$sce", "messages", "html"];

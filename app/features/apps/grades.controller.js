@@ -1,15 +1,14 @@
 /**
  * Created by Daniel on 1/26/2016.
  */
-'use strict';
-
+"use strict";
+import angular from "angular";
 export default class GradesController {
 
   constructor() {
     this.studentList = [];
     this.student = {};
   }
-
 
   addStudent() {
     var student = angular.copy(this.student);
