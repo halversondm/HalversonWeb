@@ -15,7 +15,8 @@ class StockQuoteService {
       return response.data;
     }, function() {
       var message = {};
-      message.Message = "The Stock Quote service could not retrieve your stock information at this time. Please try again later.";
+      message.Message = "The Stock Quote service could not retrieve your " +
+        "stock information at this time. Please try again later.";
       return message;
     });
   }

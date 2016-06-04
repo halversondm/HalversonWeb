@@ -18,7 +18,8 @@ import StockQuoteController from "./stockQuote.controller.js";
 import stockQuoteService from "../../services/stockQuote.service.js";
 import UrlBuilderController from "./urlBuilder.controller.js";
 import checkboxSeries from "../../directives/checkboxSeries.directive.js";
-export default angular.module("app.apps", [uiRouter, uibs, discountCalculator, rpslsService, stockQuoteService, checkboxSeries])
+export default angular.module("app.apps", [uiRouter, uibs, discountCalculator,
+  rpslsService, stockQuoteService, checkboxSeries])
   .config(routing)
   .controller("AbcController", AbcController)
   .controller("Base64Controller", Base64Controller)

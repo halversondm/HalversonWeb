@@ -18,6 +18,7 @@
   "scripts": {
     "test": "",
     "startProd": "cross-env NODE_ENV=production node server",
+    "prestartHot": "npm run eslint",
     "startHot": "cross-env NODE_ENV=hot node devServer",
     "clean": "rimraf dist",
     "eslint": "eslint app/**/**.js --fix",

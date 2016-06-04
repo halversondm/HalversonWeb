@@ -4,7 +4,6 @@
 "use strict";
 import angular from "angular";
 class DiscountCalculator {
-
   constructor() {
     this.discount1 = 0;
     this.discount2 = 0;
@@ -39,7 +38,8 @@ class DiscountCalculator {
   }
 
   calculate() {
-    var firstCalc = this.labelPrice - (this.labelPrice * (this.discount1 / 100));
+    var firstCalc = this.labelPrice -
+      (this.labelPrice * (this.discount1 / 100));
     var newPrice;
     if (this.discount2 === 0) {
       newPrice = firstCalc;

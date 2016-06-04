@@ -8,6 +8,10 @@
     "quotes": [
       "error",
       "double"
+    ],
+    "max-len": [
+      "error",
+      150
     ]
   }
 }

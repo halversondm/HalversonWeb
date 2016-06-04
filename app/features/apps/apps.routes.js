@@ -3,6 +3,11 @@
  */
 "use strict";
 routes.$inject = ["$stateProvider"];
+/**
+ * Routing for this feature.
+ *
+ * @param {object} $stateProvider A state provider
+ */
 export default function routes($stateProvider) {
   $stateProvider.state("apps", {
     url: "/apps",

@@ -20,7 +20,8 @@ export default class StockQuoteController {
   }
 
   makeCall(stockSymbol) {
-    this.stockQuoteService.call(stockSymbol).then(data => this.stocks.push(data));
+    this.stockQuoteService.call(stockSymbol).then(
+      data => this.stocks.push(data));
   }
 
   submit() {

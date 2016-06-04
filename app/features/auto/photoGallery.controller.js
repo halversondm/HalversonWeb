@@ -47,7 +47,8 @@ export default class PhotoGalleryController {
   buildArray(pageNumber) {
     this.photoArray = [];
     for (var i = this.firstPhoto[pageNumber - 1]; i <= this.lastPhoto[pageNumber - 1]; i++) {
-      var source = this.galleryConfig.filePrefix + i + this.galleryConfig.fileSuffix;
+      var source = this.galleryConfig.filePrefix + i +
+        this.galleryConfig.fileSuffix;
       this.photoArray.push(source);
     }
   }

@@ -36,8 +36,11 @@ export default class UrlBuilderController {
   }
 
   launch() {
-    var myWindow = window.open("", "MsgWindow", "toolbar=yes, scrollbars=yes, resizable=yes, width=1024, height=768");
-    myWindow.document.write("<html><head><meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\"></head></head><body><iframe src=\"" + this.assembledUrl + "\" width=\"100%\" height=\"100%\" /></body></html>\"");
+    var myWindow = window.open("", "MsgWindow", "toolbar=yes, scrollbars=yes, " +
+      "resizable=yes, width=1024, height=768");
+    myWindow.document.write("<html><head><meta http-equiv=\"X-UA-Compatible\"" +
+      " content=\"IE=edge\"></head></head><body><iframe src=\"" + this.assembledUrl + "\" width=\"100%\"" +
+      " height=\"100%\" /></body></html>\"");
   }
 
   setCookie(cname, value) {

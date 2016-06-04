@@ -6,13 +6,27 @@ export default class AbcController {
   constructor($http, $uibModal) {
     this.http = $http;
     this.modal = $uibModal;
-    this.antecedents = ["Given Direction/task, asked to do something", "Asked to wait", "Difficulty with task/activity", "Preferred activity interrupted", "Activity/Item denied (\"told no\")", "Loud, noisy environment", "Given assistance / correction", "Transition between locations", "Attention given to others", "Attention not given when wanted", "Left alone (no indiv. attention)"];
+    this.antecedents = ["Given Direction/task, asked to do something",
+      "Asked to wait", "Difficulty with task/activity",
+      "Preferred activity interrupted", "Activity/Item denied (\"told no\")",
+      "Loud, noisy environment", "Given assistance / correction",
+      "Transition between locations", "Attention given to others",
+      "Attention not given when wanted", "Left alone (no indiv. attention)"];
     this.locations = ["Home", "School", "Other"];
     this.people = ["Mom", "Dad", "Sibling", "Grandparents", "Alone", "Peers"];
-    this.behaviors = ["Refuse to follow directions", "Makes verbal threats", "Grabbing/pulling", "Crying/Whining", "Screaming/Yelling", "Scratching", "Biting", "Spitting", "Kicking", "Flopping", "Running Away", "Destroying property", "Hitting Self", "Hitting Others", "Verbal Refusal"];
-    this.durations = ["< 1 min", "1 - 5 min", "5 - 10 min", "10 - 30 min", "30 min - 1 hr", "1 - 2 hrs", "2 - 3 hrs", "3+ hrs"];
+    this.behaviors = ["Refuse to follow directions", "Makes verbal threats",
+      "Grabbing/pulling", "Crying/Whining", "Screaming/Yelling", "Scratching",
+      "Biting", "Spitting", "Kicking", "Flopping", "Running Away",
+      "Destroying property", "Hitting Self", "Hitting Others",
+      "Verbal Refusal"];
+    this.durations = ["< 1 min", "1 - 5 min", "5 - 10 min", "10 - 30 min",
+      "30 min - 1 hr", "1 - 2 hrs", "2 - 3 hrs", "3+ hrs"];
     this.intensities = ["Low", "Medium", "High"];
-    this.consequences = ["Verbal Redirection", "Physical assist/prompt", "Ignored problem behavior", "Kept on demand", "Verbal reprimand", "Removed from activity", "Given a different activity/task", "Lost Privilege", "Sent to room", "Given a time out", "Left alone"];
+    this.consequences = ["Verbal Redirection", "Physical assist/prompt",
+      "Ignored problem behavior", "Kept on demand",
+      "Verbal reprimand", "Removed from activity",
+      "Given a different activity/task", "Lost Privilege", "Sent to room",
+      "Given a time out", "Left alone"];
     this.reset();
   }
 
@@ -103,7 +117,8 @@ export default class AbcController {
       this.messages.push("At least one Person is required to save.");
     } else if (this.user.people.indexOf("Other") === 0) {
       if (!this.user.peopleOther || this.user.peopleOther === "") {
-        this.messages.push("For People - Other, the text description of Other must be entered.");
+        this.messages.push(
+          "For People - Other, the text description of Other must be entered.");
       }
     } else {
       this.user.peopleOther = "";
@@ -112,7 +127,8 @@ export default class AbcController {
       this.messages.push("At least one Behavior is required to save.");
     } else if (this.user.behavior.indexOf("Other") === 0) {
       if (!this.user.behaviorOther || this.user.behaviorOther === "") {
-        this.messages.push("For Behavior - Other, the text description of Other must be entered.");
+        this.messages.push(
+          "For Behavior - Other, the text description of Other must be entered.");
       }
     } else {
       this.user.behaviorOther = "";
@@ -121,7 +137,8 @@ export default class AbcController {
       this.messages.push("At least one Consequence is required to save.");
     } else if (this.user.consequence.indexOf("Other") === 0) {
       if (!this.user.consequenceOther || this.user.consequenceOther === "") {
-        this.messages.push("For Consequence - Other, the text description of Other must be entered.");
+        this.messages.push(
+          "For Consequence - Other, the text description of Other must be entered.");
       }
     } else {
       this.user.consequenceOther = "";
@@ -130,7 +147,8 @@ export default class AbcController {
       this.messages.push("An Antecedent is required to save.");
     } else if (this.user.antecedent === "Other") {
       if (!this.user.antecedentOther || this.user.antecedentOther === "") {
-        this.messages.push("For Antecedent - Other, the text description of Other must be entered.");
+        this.messages.push(
+          "For Antecedent - Other, the text description of Other must be entered.");
       }
     } else {
       this.user.antecedentOther = "";

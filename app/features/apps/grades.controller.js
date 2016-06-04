@@ -15,7 +15,8 @@ export default class GradesController {
     var quizzes = ((student.quiz1 * 10) + (student.quiz2 * 10)) / 200;
     var midterm = student.midterm / 100;
     var final = student.final / 100;
-    var finalGrade = ((quizzes * 0.25) + (midterm * 0.25) + (final * 0.5)) * 100;
+    var finalGrade = ((quizzes * 0.25) + (midterm * 0.25) +
+      (final * 0.5)) * 100;
     student.classAverage = Math.round(finalGrade);
     if (finalGrade >= 90) {
       student.letterGrade = "A";
