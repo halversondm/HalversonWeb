@@ -37,7 +37,7 @@ app.post("/saveABC", function response(req, res) {
   console.log(req.body);
   var ABC = mongoose.model("ABC", abcSchema);
   var abcInstance = new ABC(req.body);
-  abcInstance.save(function (err) {
+  abcInstance.save(function(err) {
     if (err) {
       console.log(err);
       res.send(err);
