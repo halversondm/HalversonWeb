@@ -2,7 +2,9 @@
  * Created by Daniel on 1/26/2016.
  */
 "use strict";
+
 import angular from "angular";
+
 class GameService {
 
   constructor() {
@@ -191,6 +193,8 @@ class GameService {
     this.pick = picks[randomNumber];
   }
 }
-export default angular.module("services.game", [])
+
+export default angular
+  .module("services.game", [])
   .service("gameService", GameService)
   .name;

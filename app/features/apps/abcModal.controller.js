@@ -3,7 +3,7 @@
  */
 "use strict";
 
-export default class AbcModalController {
+class AbcModalController {
 
   constructor($uibModalInstance, $sce, messages, html) {
     this.modalInstance = $uibModalInstance;
@@ -13,3 +13,5 @@ export default class AbcModalController {
   }
 }
 AbcModalController.$inject = ["$uibModalInstance", "$sce", "messages", "html"];
+
+export default AbcModalController;

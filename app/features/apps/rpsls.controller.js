@@ -3,7 +3,7 @@
  */
 "use strict";
 
-export default class RpslsController {
+class RpslsController {
 
   constructor(gameService) {
     this.gameService = gameService;
@@ -93,4 +93,7 @@ export default class RpslsController {
     }
   }
 }
+
 RpslsController.$inject = ["gameService"];
+
+export default RpslsController;

@@ -12,6 +12,11 @@
     "max-len": [
       "error",
       150
+    ],
+    "linebreak-style": [
+      "error",
+      "windows"
     ]
+
   }
 }

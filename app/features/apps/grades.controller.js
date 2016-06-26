@@ -2,8 +2,10 @@
  * Created by Daniel on 1/26/2016.
  */
 "use strict";
+
 import angular from "angular";
-export default class GradesController {
+
+class GradesController {
 
   constructor() {
     this.studentList = [];
@@ -37,3 +39,5 @@ export default class GradesController {
     this.studentList.splice(index, 1);
   }
 }
+
+export default GradesController;

@@ -2,20 +2,28 @@
  * Created by Daniel on 1/24/2016.
  */
 "use strict";
+
+import grandPrix from "./grandPrix.html";
+import charger from "./charger.html";
+import honda from "./honda.html";
+import yamaha from "./yamaha.html";
+import auto from "./auto.html";
+
 routes.$inject = ["$stateProvider"];
+
 /**
  * Routing for this feature.
  *
  * @param {object} $stateProvider A state provider
  */
-export default function routes($stateProvider) {
+function routes($stateProvider) {
   $stateProvider.state("auto", {
     url: "/auto",
-    template: require("./auto.html")
+    template: auto
   });
   $stateProvider.state("grandPrix", {
     url: "/grandPrix",
-    template: require("./grandPrix.html"),
+    template: grandPrix,
     resolve: {
       galleryConfig: function() {
         return {
@@ -31,11 +39,11 @@ export default function routes($stateProvider) {
   });
   $stateProvider.state("charger", {
     url: "/charger",
-    template: require("./charger.html")
+    template: charger
   });
   $stateProvider.state("honda", {
     url: "/honda",
-    template: require("./honda.html"),
+    template: honda,
     resolve: {
       galleryConfig: function() {
         return {
@@ -51,7 +59,7 @@ export default function routes($stateProvider) {
   });
   $stateProvider.state("yamaha", {
     url: "/yamaha",
-    template: require("./yamaha.html"),
+    template: yamaha,
     resolve: {
       galleryConfig: function() {
         return {
@@ -66,3 +74,5 @@ export default function routes($stateProvider) {
     controllerAs: "photoCtrl"
   });
 }
+
+export default routes;

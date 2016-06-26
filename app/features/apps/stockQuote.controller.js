@@ -3,7 +3,7 @@
  */
 "use strict";
 
-export default class StockQuoteController {
+ class StockQuoteController {
 
   constructor(stockQuoteService) {
     this.stockQuoteService = stockQuoteService;
@@ -30,4 +30,7 @@ export default class StockQuoteController {
     this.stockInput = "";
   }
 }
+
 StockQuoteController.$inject = ["stockQuoteService"];
+
+export default StockQuoteController;

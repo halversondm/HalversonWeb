@@ -1,37 +1,36 @@
-'use strict';
+"use strict";
 
-var path = require('path');
-var webpack = require('webpack');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-var CopyWebpackPlugin = require('copy-webpack-plugin');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
-var StatsPlugin = require('stats-webpack-plugin');
+import path from "path";
+import webpack from "webpack";
+import HtmlWebpackPlugin from "html-webpack-plugin";
+import CopyWebpackPlugin from "copy-webpack-plugin";
+import ExtractTextPlugin from "extract-text-webpack-plugin";
 
 module.exports = {
   entry: [
-    path.join(__dirname, 'app/main.js')
+    path.join(__dirname, "app/main.js")
   ],
   output: {
-    path: path.join(__dirname, '/dist/'),
-    filename: '[name]-[hash].min.js'
+    path: path.join(__dirname, "/dist/"),
+    filename: "[name]-[hash].min.js"
   },
   plugins: [
     new CopyWebpackPlugin([{
-      from: 'app/images/',
-      to: 'images/'
+      from: "app/images/",
+      to: "images/"
     }, {
-      from: 'app/extras'
+      from: "app/extras"
     }, {
-      from: 'app/runtime'
+      from: "app/runtime"
     }]),
     new webpack.optimize.OccurenceOrderPlugin(),
     new HtmlWebpackPlugin({
-      template: 'app/index.tpl.html',
-      inject: 'body',
-      favicon: 'app/favicon.ico',
-      filename: 'index.html'
+      template: "app/index.tpl.html",
+      inject: "body",
+      favicon: "app/favicon.ico",
+      filename: "index.html"
     }),
-    new ExtractTextPlugin('[name]-[hash].min.css'),
+    new ExtractTextPlugin("[name]-[hash].min.css"),
     new webpack.optimize.UglifyJsPlugin({
       compressor: {
         warnings: false,
@@ -39,7 +38,7 @@ module.exports = {
       }
     }),
     new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
+      "process.env.NODE_ENV": JSON.stringify(process.env.NODE_ENV)
     }),
     new webpack.ProvidePlugin({
       $: "jquery",
@@ -50,25 +49,25 @@ module.exports = {
     loaders: [{
       test: /\.js?$/,
       exclude: /node_modules/,
-      loader: 'babel'
+      loader: "babel"
     }, {
       test: /\.json?$/,
-      loader: 'json'
+      loader: "json"
     }, {
       test: /\.css$/,
-      loader: ExtractTextPlugin.extract('style', 'css')
+      loader: ExtractTextPlugin.extract("style", "css")
     }, {
       test: /\.(ttf|eot|woff2|svg|png|woff)$/,
-      loader: 'file-loader?name=assets/[name].[ext]'
+      loader: "file-loader?name=assets/[name].[ext]"
     }, {
       test: /\.php$/,
-      loader: 'file-loader?name=[name].[ext]'
+      loader: "file-loader?name=[name].[ext]"
     }, {
       test: /\.html$/,
-      loader: 'raw'
+      loader: "raw"
     }]
   },
   postcss: [
-    require('autoprefixer')
+    require("autoprefixer")
   ]
 };

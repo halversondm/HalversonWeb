@@ -2,33 +2,43 @@
  * Created by Daniel on 1/24/2016.
  */
 "use strict";
+
+import home from "./home.html";
+import contact from "./contact.html";
+import blog from "./blog.html";
+import resume from "./resume.html";
+import about from "./about.html";
+
 routes.$inject = ["$stateProvider"];
+
 /**
  * Routing for this feature.
  *
  * @param {object} $stateProvider A state provider
  */
-export default function routes($stateProvider) {
+function routes($stateProvider) {
   $stateProvider.state("home", {
     url: "/",
-    template: require("./home.html")
+    template: home
   });
   $stateProvider.state("contact", {
     url: "/contact",
-    template: require("./contact.html")
+    template: contact
   });
   $stateProvider.state("blog", {
     url: "/blog",
-    template: require("./blog.html"),
+    template: blog,
     controller: "BlogController",
     controllerAs: "blog"
   });
   $stateProvider.state("resume", {
     url: "/resume",
-    template: require("./resume.html")
+    template: resume
   });
   $stateProvider.state("about", {
     url: "/about",
-    template: require("./about.html")
+    template: about
   });
 }
+
+export default routes;

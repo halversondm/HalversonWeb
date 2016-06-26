@@ -17,9 +17,9 @@
   "homepage": "https://github.com/halversondm/HalversonWeb.git",
   "scripts": {
     "test": "",
-    "startProd": "cross-env NODE_ENV=production node server",
+    "startProd": "cross-env NODE_ENV=production babel-node server",
     "prestartHot": "npm run eslint",
-    "startHot": "cross-env NODE_ENV=hot node devServer",
+    "startHot": "cross-env NODE_ENV=hot babel-node devServer",
     "clean": "rimraf dist",
     "eslint": "eslint app/**/**.js --fix",
     "prebuild": "npm run clean && cross-env NODE_ENV=production && npm run eslint",

@@ -4,6 +4,7 @@
 "use strict";
 
 import angular from "angular";
+
 class CheckboxSeriesDirective {
   constructor() {
     this.restrict = "E";
@@ -41,6 +42,8 @@ class CheckboxSeriesDirective {
     return CheckboxSeriesDirective.instance;
   }
 }
-export default angular.module("directives.checkboxSeries", [])
+
+export default angular
+  .module("directives.checkboxSeries", [])
   .directive("checkboxSeries", CheckboxSeriesDirective.directiveFactory)
   .name;

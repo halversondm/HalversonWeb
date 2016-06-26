@@ -3,7 +3,7 @@
  */
 "use strict";
 
-export default class DiscountCalculatorController {
+class DiscountCalculatorController {
 
   constructor(discountCalculator) {
     this.discountCalculator = discountCalculator;
@@ -38,3 +38,5 @@ export default class DiscountCalculatorController {
 
 }
 DiscountCalculatorController.$inject = ["discountCalculator"];
+
+export default DiscountCalculatorController;

@@ -2,57 +2,69 @@
  * Created by Daniel on 1/24/2016.
  */
 "use strict";
+
+import apps from "./apps.html";
+import abc from "./abc.html";
+import base64 from "./base64.html";
+import rpsls from "./rpsls.html";
+import discountCalculator from "./discountCalculator.html";
+import stockQuote from "./stockQuote.html";
+import grades from "./grades.html";
+import urlBuilder from "./urlBuilder.html";
+
 routes.$inject = ["$stateProvider"];
 /**
  * Routing for this feature.
  *
  * @param {object} $stateProvider A state provider
  */
-export default function routes($stateProvider) {
+function routes($stateProvider) {
   $stateProvider.state("apps", {
     url: "/apps",
-    template: require("./apps.html")
+    template: apps
   });
   $stateProvider.state("abc", {
     url: "/abc",
-    template: require("./abc.html"),
+    template: abc,
     controller: "AbcController",
     controllerAs: "abc"
   });
   $stateProvider.state("base64", {
     url: "/base64",
-    template: require("./base64.html"),
+    template: base64,
     controller: "Base64Controller",
     controllerAs: "base64"
   });
   $stateProvider.state("rpsls", {
     url: "/rpsls",
-    template: require("./rpsls.html"),
+    template: rpsls,
     controller: "RpslsController",
     controllerAs: "rpsls"
   });
   $stateProvider.state("discountCalculator", {
     url: "/discountCalculator",
-    template: require("./discountCalculator.html"),
+    template: discountCalculator,
     controller: "DiscountCalculatorController",
     controllerAs: "discountCalc"
   });
   $stateProvider.state("stockQuote", {
     url: "/stockQuote",
-    template: require("./stockQuote.html"),
+    template: stockQuote,
     controller: "StockQuoteController",
     controllerAs: "stockQuote"
   });
   $stateProvider.state("grades", {
     url: "/grades",
-    template: require("./grades.html"),
+    template: grades,
     controller: "GradesController",
     controllerAs: "grades"
   });
   $stateProvider.state("urlBuilder", {
     url: "/urlBuilder",
-    template: require("./urlBuilder.html"),
+    template: urlBuilder,
     controller: "UrlBuilderController",
     controllerAs: "urlBuilder"
   });
 }
+
+export default routes;

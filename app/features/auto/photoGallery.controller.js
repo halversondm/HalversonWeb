@@ -4,7 +4,7 @@
 
 "use strict";
 
-export default class PhotoGalleryController {
+class PhotoGalleryController {
 
   constructor(galleryConfig) {
     this.galleryConfig = galleryConfig;
@@ -58,4 +58,7 @@ export default class PhotoGalleryController {
   }
 
 }
+
 PhotoGalleryController.$inject = ["galleryConfig"];
+
+export default PhotoGalleryController;

@@ -2,7 +2,9 @@
  * Created by Daniel on 1/26/2016.
  */
 "use strict";
+
 import angular from "angular";
+
 class StockQuoteService {
 
   constructor($http) {
@@ -22,7 +24,10 @@ class StockQuoteService {
   }
 
 }
+
 StockQuoteService.$inject = ["$http"];
-export default angular.module("services.stockQuote", [])
+
+export default angular
+  .module("services.stockQuote", [])
   .service("stockQuoteService", StockQuoteService)
   .name;

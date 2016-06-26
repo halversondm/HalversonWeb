@@ -3,6 +3,7 @@
  */
 "use strict";
 import angular from "angular";
+
 class DiscountCalculator {
   constructor() {
     this.discount1 = 0;
@@ -73,6 +74,8 @@ class DiscountCalculator {
     }
   }
 }
-export default angular.module("services.discount-calc", [])
+
+export default angular
+  .module("services.discount-calc", [])
   .service("discountCalculator", DiscountCalculator)
   .name;

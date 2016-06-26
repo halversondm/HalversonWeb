@@ -2,8 +2,10 @@
  * Created by Daniel on 1/27/2016.
  */
 "use strict";
+
 import angular from "angular";
-export default class UrlBuilderController {
+
+class UrlBuilderController {
 
   constructor() {
     this.queries = [];
@@ -50,3 +52,5 @@ export default class UrlBuilderController {
     document.cookie = cname + "=" + value + "; " + expires;
   }
 }
+
+export default UrlBuilderController;

@@ -4,7 +4,7 @@
 
 "use strict";
 
-export default class PhotoGalleryModalController {
+class PhotoGalleryModalController {
 
   constructor($uibModalInstance, photo) {
     this.modalInstance = $uibModalInstance;
@@ -39,4 +39,7 @@ export default class PhotoGalleryModalController {
   }
 
 }
+
 PhotoGalleryModalController.$inject = ["$uibModalInstance", "photo"];
+
+export default PhotoGalleryModalController;

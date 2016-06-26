@@ -3,8 +3,7 @@
  */
 "use strict";
 
-export default class Base64Controller {
-
+class Base64Controller {
   constructor() {
     this.encodeOutput = "";
     this.encodeInput = "";
@@ -31,3 +30,5 @@ export default class Base64Controller {
   }
 
 }
+
+export default Base64Controller;

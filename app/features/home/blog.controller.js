@@ -3,7 +3,7 @@
  */
 "use strict";
 
-export default class BlogController {
+class BlogController {
 
   constructor($http, $sce) {
     this.http = $http;
@@ -25,4 +25,7 @@ export default class BlogController {
   }
 
 }
+
 BlogController.$inject = ["$http", "$sce"];
+
+export default BlogController;

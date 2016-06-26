@@ -2,7 +2,8 @@
  * Created by Daniel on 1/25/2016.
  */
 "use strict";
-export default class AbcController {
+
+class AbcController {
   constructor($http, $uibModal) {
     this.http = $http;
     this.modal = $uibModal;
@@ -169,3 +170,5 @@ export default class AbcController {
   }
 }
 AbcController.$inject = ["$http", "$uibModal"];
+
+export default AbcController;

@@ -3,6 +3,7 @@
  */
 "use strict";
 import angular from "angular";
+
 const MODAL = new WeakMap();
 
 class PhotoGalleryDirective {
@@ -39,7 +40,10 @@ class PhotoGalleryDirective {
   }
 
 }
+
 PhotoGalleryDirective.directiveFactory.$inject = ["$uibModal"];
-export default angular.module("directives.photoGallery", [])
+
+export default angular
+  .module("directives.photoGallery", [])
   .directive("photoGallery", PhotoGalleryDirective.directiveFactory)
   .name;

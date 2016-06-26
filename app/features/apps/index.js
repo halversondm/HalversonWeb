@@ -7,7 +7,7 @@ import uiRouter from "angular-ui-router";
 import routing from "./apps.routes";
 import AbcController from "./abc.controller";
 import AbcModalController from "./abcModal.controller";
-import Base64Controller from "./base64.controller.js";
+import Base64Controller from "./base64.controller";
 import uibs from "angular-ui-bootstrap";
 import discountCalculator from "../../services/discountCalc.service.js";
 import DiscountCalculatorController from "./discountCalculator.controller";
@@ -18,15 +18,19 @@ import StockQuoteController from "./stockQuote.controller.js";
 import stockQuoteService from "../../services/stockQuote.service.js";
 import UrlBuilderController from "./urlBuilder.controller.js";
 import checkboxSeries from "../../directives/checkboxSeries.directive.js";
-export default angular.module("app.apps", [uiRouter, uibs, discountCalculator,
-  rpslsService, stockQuoteService, checkboxSeries])
-  .config(routing)
-  .controller("AbcController", AbcController)
+
+const apps = angular
+  .module("appApps", [uiRouter, uibs, discountCalculator, rpslsService,
+      stockQuoteService, checkboxSeries])
   .controller("Base64Controller", Base64Controller)
+  .controller("AbcController", AbcController)
   .controller("DiscountCalculatorController", DiscountCalculatorController)
   .controller("RpslsController", RpslsController)
   .controller("GradesController", GradesController)
   .controller("StockQuoteController", StockQuoteController)
   .controller("UrlBuilderController", UrlBuilderController)
   .controller("AbcModalController", AbcModalController)
+  .config(routing)
   .name;
+
+export default apps;
