@@ -15,5 +15,3 @@ const home = angular
 
 export default home;
 
-
-

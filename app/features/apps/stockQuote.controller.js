@@ -3,7 +3,7 @@
  */
 "use strict";
 
- class StockQuoteController {
+class StockQuoteController {
 
   constructor(stockQuoteService) {
     this.stockQuoteService = stockQuoteService;

@@ -66,8 +66,5 @@ module.exports = {
       test: /\.html$/,
       loader: "raw"
     }]
-  },
-  postcss: [
-    require("autoprefixer")
-  ]
+  }
 };
